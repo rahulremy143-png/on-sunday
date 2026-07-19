@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sri Kanya Handicrafts | Kanyakumari Premium Artisan Crafts</title>
-  <meta name="description" content="Explore premium handcrafted wood carvings, sandalwood figures, and seashell art at Sri Kanya Handicrafts. Located on the historic Sannathi Street near Bhagavathy Amman Temple, Kanyakumari.">
+  <title>The Story of Sri Kanya | Sri Kanya Handicrafts</title>
+  <meta name="description" content="Discover the multigenerational story of Sri Kanya Handicrafts, born on the historic Sannathi Street near Bhagavathy Amman Temple in Kanyakumari.">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +16,299 @@
   
   <!-- Custom Stylesheets -->
   <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    /* -------------------------------------------------------------
+       ABOUT PAGE EXCLUSIVE CUSTOM STYLES
+       ------------------------------------------------------------- */
+    
+    .about-main {
+      padding-top: 140px; /* Space for the sticky glass navbar */
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Decorative Temple Ornament in Background */
+    .about-bg-mandala {
+      position: absolute;
+      top: 100px;
+      left: 5%;
+      width: 400px;
+      height: 400px;
+      opacity: 0.05;
+      pointer-events: none;
+      z-index: 1;
+      transform: rotate(15deg);
+    }
+    
+    .about-bg-mandala-right {
+      position: absolute;
+      bottom: 20%;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 1;
+      transform: rotate(-25deg);
+    }
+    
+    /* Story Hero Title Header */
+    .story-hero {
+      text-align: center;
+      padding: 40px 20px 60px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .story-hero .sub-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--color-sunset-gold);
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    
+    .story-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.25;
+      letter-spacing: -0.5px;
+      max-width: 900px;
+      margin: 0 auto 15px;
+    }
+    
+    .story-hero h1 span {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-sunset-gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .story-hero .divider {
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-primary), var(--color-accent-orange));
+      margin: 25px auto 0;
+      border-radius: 2px;
+    }
+    
+    @media (max-width: 768px) {
+      .about-main {
+        padding-top: 100px;
+      }
+      .story-hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+    
+    /* Grid & Layout Structure */
+    .story-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .story-row {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      margin-bottom: 120px;
+    }
+    
+    .story-row:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    
+    .story-col-text {
+      flex: 1.2;
+    }
+    
+    .story-col-visual {
+      flex: 0.8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+    }
+    
+    @media (max-width: 992px) {
+      .story-row, .story-row:nth-child(even) {
+        flex-direction: column;
+        gap: 50px;
+        margin-bottom: 80px;
+      }
+      .story-col-text, .story-col-visual {
+        width: 100%;
+      }
+    }
+    
+    /* Glassmorphic Story Card */
+    .story-card {
+      background: var(--glass-card);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: var(--border-radius-md);
+      padding: 50px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+      transition: var(--transition-smooth);
+    }
+    
+    .story-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-glow-cyan);
+      border-color: var(--color-primary);
+    }
+    
+    .story-card .section-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-accent-orange);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+    
+    .story-card h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.4rem;
+      margin-bottom: 22px;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+    
+    .story-card p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+    
+    .story-card p:last-child {
+      margin-bottom: 0;
+    }
+    
+    @media (max-width: 480px) {
+      .story-card {
+        padding: 30px 20px;
+      }
+      .story-card h2 {
+        font-size: 1.8rem;
+      }
+    }
+    
+    /* Staggered overlapping Image Collage ('Heritage in Motion') */
+    .collage-wrapper {
+      position: relative;
+      width: 360px;
+      height: 420px;
+      perspective: 1200px;
+    }
+    
+    @media (max-width: 480px) {
+      .collage-wrapper {
+        width: 280px;
+        height: 340px;
+      }
+    }
+    
+    .collage-img {
+      position: absolute;
+      border-radius: var(--border-radius-sm);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+      border: 4px solid #fff;
+      transition: var(--transition-elastic);
+      cursor: pointer;
+      overflow: hidden;
+      will-change: transform;
+    }
+    
+    body.dark-mode .collage-img {
+      border-color: var(--bg-light);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    }
+    
+    .collage-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .collage-img:hover {
+      transform: scale(1.08) rotate(0deg) translateY(-8px) !important;
+      box-shadow: var(--shadow-glow-cyan);
+      z-index: 10 !important;
+    }
+    
+    .collage-img:hover img {
+      transform: scale(1.06);
+    }
+    
+    /* Specific offsets and angles for a beautiful layered look */
+    .c-img-1 {
+      width: 240px;
+      height: 280px;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    
+    .c-img-2 {
+      width: 200px;
+      height: 240px;
+      bottom: 10px;
+      right: 0;
+      z-index: 2;
+    }
+    
+    .c-img-3 {
+      width: 150px;
+      height: 150px;
+      top: 35%;
+      left: 28%;
+      z-index: 3;
+      border-radius: 50%;
+    }
+    
+    /* Actions & go back button */
+    .about-actions {
+      text-align: center;
+      margin: 20px auto 80px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .nav-button {
+      padding: 18px 45px;
+      font-size: 1rem;
+      border-radius: var(--border-radius-sm);
+      box-shadow: var(--shadow-glow-cyan);
+      font-family: 'Outfit', sans-serif;
+    }
+    
+    /* Scroll reveal animations */
+    .reveal-ready {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .reveal-active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body>
 
@@ -23,20 +316,21 @@
   <header id="main-header">
     <div class="header-container">
       <div class="logo">
-        <a href="#hero" id="nav-logo">
+        <a href="index.html#hero" id="nav-logo">
           <span class="logo-accent">Sri Kanya</span> Handicrafts
         </a>
       </div>
       
-    <nav class="desktop-nav">
-  <ul>
-    <li><a href="#hero" class="nav-link-item">Home</a></li>
-    <li><a href="#heritage" class="nav-link-item">Our Heritage</a></li>
-    <li><a href="#location-map" class="nav-link-item">Location</a></li>
-    <li><a href="#gallery" class="nav-link-item">Artisan Gallery</a></li>
-    <li><a href="#footer-section" class="nav-link-item">Find Us</a></li>
-  </ul>
-</nav>
+      <nav class="desktop-nav">
+        <ul>
+          <li><a href="index.html#hero" class="nav-link-item">Home</a></li>
+          <li><a href="about.html" class="nav-link-item">About Us</a></li>
+          <li><a href="index.html#heritage" class="nav-link-item">Our Heritage</a></li>
+          <li><a href="index.html#location-map" class="nav-link-item">Location</a></li>
+          <li><a href="index.html#gallery" class="nav-link-item">Artisan Gallery</a></li>
+          <li><a href="index.html#footer-section" class="nav-link-item">Find Us</a></li>
+        </ul>
+      </nav>
       
       <div class="contact-triggers">
         <!-- Floating Day/Night Theme Switcher -->
@@ -66,11 +360,12 @@
   <div class="mobile-nav-overlay" id="navOverlay">
     <nav class="mobile-nav-menu">
       <ul>
-        <li><a href="#hero" class="mobile-nav-link">Home</a></li>
-        <li><a href="#heritage" class="mobile-nav-link">Our Heritage</a></li>
-        <li><a href="#location-map" class="mobile-nav-link">Location</a></li>
-        <li><a href="#gallery" class="mobile-nav-link">Artisan Gallery</a></li>
-        <li><a href="#footer-section" class="mobile-nav-link">Find Us</a></li>
+        <li><a href="index.html#hero" class="mobile-nav-link">Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li><a href="index.html#heritage" class="mobile-nav-link">Our Heritage</a></li>
+        <li><a href="index.html#location-map" class="mobile-nav-link">Location</a></li>
+        <li><a href="index.html#gallery" class="mobile-nav-link">Artisan Gallery</a></li>
+        <li><a href="index.html#footer-section" class="mobile-nav-link">Find Us</a></li>
       </ul>
       <div class="mobile-socials">
         <a href="https://wa.me/919500083229" target="_blank" class="mobile-social-icon wa" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
@@ -79,1389 +374,127 @@
     </nav>
   </div>
 
-  <main>
-    
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-      <!-- Animated Sky, Clouds and Birds Canvas -->
-      <div class="sky-animation-container">
-        <!-- Topbase stones overhang & dripping cinematic drops -->
-        <div class="bg-topbase-stones">
-          <svg viewBox="0 0 1440 80" preserveAspectRatio="none" class="topbase-stones-svg">
-            <path d="M 0 0 L 1440 0 L 1440 25 C 1300 45, 1200 15, 1050 35 C 900 15, 800 50, 650 30 C 500 20, 350 45, 200 25 C 100 35, 0 15, 0 25 Z" fill="var(--bg-medium)" opacity="0.4" />
-            <path d="M 150 20 Q 155 45 150 60 M 380 25 Q 385 55 380 75 M 720 30 Q 725 60 720 80 M 1050 20 Q 1055 50 1050 70 M 1300 25 Q 1305 45 1300 55" stroke="var(--color-primary)" stroke-width="2" fill="none" opacity="0.3" />
-          </svg>
-        </div>
-        
-        <!-- Subtle traditional Dravidian temple border ornament -->
-        <div class="bg-temple-mandala-ornament">
-          <svg viewBox="0 0 100 100" class="mandala-svg">
-            <circle cx="50" cy="50" r="45" fill="none" stroke="var(--color-sunset-gold)" stroke-width="0.5" opacity="0.12" />
-            <polygon points="50,10 90,50 50,90 10,50" fill="none" stroke="var(--color-sunset-gold)" stroke-width="0.5" opacity="0.12" />
-            <circle cx="50" cy="50" r="30" fill="none" stroke="var(--color-primary)" stroke-width="0.5" opacity="0.1" />
-          </svg>
-        </div>
+  <main class="about-main">
+    <!-- Traditional temple ornament background illustrations -->
+    <svg viewBox="0 0 100 100" class="about-bg-mandala">
+      <circle cx="50" cy="50" r="45" fill="none" stroke="var(--color-sunset-gold)" stroke-width="0.5" />
+      <polygon points="50,10 90,50 50,90 10,50" fill="none" stroke="var(--color-sunset-gold)" stroke-width="0.5" />
+      <circle cx="50" cy="50" r="30" fill="none" stroke="var(--color-primary)" stroke-width="0.5" />
+    </svg>
+    <svg viewBox="0 0 100 100" class="about-bg-mandala-right">
+      <circle cx="50" cy="50" r="45" fill="none" stroke="var(--color-sunset-gold)" stroke-width="0.5" />
+      <polygon points="50,10 90,50 50,90 10,50" fill="none" stroke="var(--color-sunset-gold)" stroke-width="0.5" />
+      <circle cx="50" cy="50" r="30" fill="none" stroke="var(--color-primary)" stroke-width="0.5" />
+    </svg>
 
-        <div class="bg-dripping-drops">
-          <div class="water-drop drop-1"></div>
-          <div class="water-drop drop-2"></div>
-          <div class="water-drop drop-3"></div>
-          <div class="water-drop drop-4"></div>
-          <div class="water-drop drop-5"></div>
-          <div class="water-drop drop-6"></div>
-          <div class="water-drop drop-7"></div>
-          <div class="water-drop drop-8"></div>
-          <div class="water-drop drop-9"></div>
-          <div class="water-drop drop-10"></div>
-        </div>
-        
-        <!-- Falling Stars (Shooting Stars) with multiple colors -->
-        <div class="sky-falling-stars">
-          <div class="falling-star star-red fs-1"></div>
-          <div class="falling-star star-blue fs-2"></div>
-          <div class="falling-star star-gold fs-3"></div>
-          <div class="falling-star star-green fs-4"></div>
-          <div class="falling-star star-purple fs-5"></div>
-          <div class="falling-star star-cyan fs-6"></div>
-          <div class="falling-star star-magenta fs-7"></div>
-          <div class="falling-star star-yellow fs-8"></div>
-          <div class="falling-star star-orange fs-9"></div>
-          <div class="falling-star star-teal fs-10"></div>
-          <div class="falling-star star-white fs-11"></div>
-          <div class="falling-star star-pink fs-12"></div>
-        </div>
+    <!-- Story Page Hero Header -->
+    <section class="story-hero">
+      <span class="sub-title">A Heritage of Craftsmanship</span>
+      <h1>The Story of Sri Kanya: <span>Born on Sannathi Street</span></h1>
+      <div class="divider"></div>
+    </section>
 
-        <!-- Anime wind-drifted floating green leaves in Hero sky -->
-        <div class="anime-leaves-container">
-          <div class="anime-leaf aleaf-1"></div>
-          <div class="anime-leaf aleaf-2"></div>
-          <div class="anime-leaf aleaf-3"></div>
-          <div class="anime-leaf aleaf-4"></div>
-          <div class="anime-leaf aleaf-5"></div>
-        </div>
-
-        <div class="cloud cloud-1"></div>
-        <div class="cloud cloud-2"></div>
-        <div class="cloud cloud-3"></div>
-        
-        <!-- Unique SVG Flying Birds -->
-        <div class="bird-group">
-          <div class="bird-wrap bird-1">
-            <svg class="bird-svg" viewBox="0 0 100 100">
-              <path class="left-wing" d="M50 50 Q30 20 10 30 Q30 40 50 50 Z" />
-              <path class="right-wing" d="M50 50 Q70 20 90 30 Q70 40 50 50 Z" />
-              <path class="bird-body" d="M45 45 C45 40, 55 40, 55 45 L50 65 Z" />
-            </svg>
-          </div>
-          <div class="bird-wrap bird-2">
-            <svg class="bird-svg" viewBox="0 0 100 100">
-              <path class="left-wing" d="M50 50 Q30 25 15 35 Q30 43 50 50 Z" />
-              <path class="right-wing" d="M50 50 Q70 25 85 35 Q70 43 50 50 Z" />
-              <path class="bird-body" d="M46 46 C46 42, 54 42, 54 46 L50 63 Z" />
-            </svg>
-          </div>
-          <div class="bird-wrap bird-3">
-            <svg class="bird-svg" viewBox="0 0 100 100">
-              <path class="left-wing" d="M50 50 Q30 18 8 28 Q30 38 50 50 Z" />
-              <path class="right-wing" d="M50 50 Q70 18 92 28 Q70 38 50 50 Z" />
-              <path class="bird-body" d="M44 44 C44 38, 56 38, 56 44 L50 67 Z" />
-            </svg>
-          </div>
-        </div>
-        
-        <!-- Colourful market street shops in background -->
-        <div class="bg-street-shops">
-          <svg viewBox="0 0 1200 150" preserveAspectRatio="none" class="shops-svg">
-            <!-- Shop 1 (Teal/Blue) -->
-            <path d="M 50 150 L 50 100 L 150 100 L 150 150 Z" fill="var(--glass-card)" stroke="var(--glass-border)" />
-            <path d="M 40 100 L 95 70 L 160 100 Z" fill="var(--color-primary)" opacity="0.85" />
-            <circle cx="95" cy="115" r="8" fill="var(--color-sunset-gold)" class="shop-lantern" />
-            
-            <!-- Shop 2 (Orange/Saffron) -->
-            <path d="M 180 150 L 180 90 L 300 90 L 300 150 Z" fill="var(--glass-card)" stroke="var(--glass-border)" />
-            <path d="M 170 90 L 240 60 L 310 90 Z" fill="var(--color-accent-orange)" opacity="0.85" />
-            <circle cx="240" cy="105" r="8" fill="var(--color-sunset-gold)" class="shop-lantern" />
-            
-            <!-- Shop 3 (Gold/Yellow) -->
-            <path d="M 330 150 L 330 110 L 430 110 L 430 150 Z" fill="var(--glass-card)" stroke="var(--glass-border)" />
-            <path d="M 320 110 L 380 85 L 440 110 Z" fill="var(--color-sunset-gold)" opacity="0.85" />
-            <circle cx="380" cy="125" r="8" fill="var(--color-sunset-gold)" class="shop-lantern" />
-            
-            <!-- Shop 4 (Deep Teal/Indigo) -->
-            <path d="M 750 150 L 750 100 L 870 100 L 870 150 Z" fill="var(--glass-card)" stroke="var(--glass-border)" />
-            <path d="M 740 100 L 810 70 L 880 100 Z" fill="var(--color-primary)" opacity="0.85" />
-            <circle cx="810" cy="115" r="8" fill="var(--color-sunset-gold)" class="shop-lantern" />
-            
-            <!-- Shop 5 (Pink/Magenta) -->
-            <path d="M 900 150 L 900 90 L 1020 90 L 1020 150 Z" fill="var(--glass-card)" stroke="var(--glass-border)" />
-            <path d="M 890 90 L 960 60 L 1030 90 Z" fill="var(--color-secondary)" opacity="0.85" />
-            <circle cx="960" cy="105" r="8" fill="var(--color-sunset-gold)" class="shop-lantern" />
-          </svg>
-        </div>
-      </div>
+    <div class="story-container">
       
-      <div class="hero-bg-gradients">
-        <div class="glow-sphere sphere-1"></div>
-        <div class="glow-sphere sphere-2"></div>
-      </div>
-      
-      <div class="section-container hero-grid">
-        <div class="hero-content">
-          <!-- Glassmorphic Rating & Timing HUD -->
-          <div class="rating-timing-hud animate-fade-in">
-            <div class="hud-item rating-item">
-              <span class="rating-stars"><i class="fa-solid fa-star"></i> 5.0</span>
-              <span class="rating-text">Google Reviews</span>
-            </div>
-            <div class="hud-divider"></div>
-            <div class="hud-item timing-item" id="shop-status-hud">
-              <span class="status-dot"></span>
-              <span class="status-text">Open: 9:00 AM - 9:00 PM</span>
-            </div>
-          </div>
-
-          <div class="badge-label animate-fade-in">Southernmost Artisan Heritage</div>
-          <h1 class="hero-title animate-slide-up">
-            Where Sacred Waves Meet <span class="highlight-text">Artisanal Soul</span>
-          </h1>
-          <p class="hero-subtitle animate-slide-up">
-            Explore authentic hand-carved wood chests, fine sandalwood deities, and ocean-crafted shell masterpieces. Curated from Sannathi Street, Kanyakumari.
-          </p>
-          <div class="hero-actions animate-fade-in">
-            <a href="#gallery" class="btn btn-primary" id="btn-explore">
-              Explore Gallery <i class="fa-solid fa-arrow-right"></i>
-            </a>
-            <a href="https://wa.me/919500083229" target="_blank" class="btn btn-secondary" id="btn-chat">
-              <i class="fa-brands fa-whatsapp"></i> Chat Live
-            </a>
+      <!-- Section 1: The Why -->
+      <div class="story-row">
+        <div class="story-col-text">
+          <div class="story-card reveal-ready">
+            <span class="section-badge">The Why</span>
+            <h2>Serving the Pilgrims of Cape Comorin</h2>
+            <p>
+              Born on the historic Sannathi Street, Sri Kanya Handicrafts began as a humble offering to the countless seekers and pilgrims journeying to the 3,000-year-old Arulmigu Bhagavathy Amman Temple. For generations, our family has stood at the sacred threshold of the three merging oceans, watching the tides and the devout merge in perfect unison.
+            </p>
+            <p>
+              We do not merely sell souvenirs; we curate the very soul of Kanyakumari. Each rosewood deity, brass lamp, and polished shell we present carries the incense-scented air of the temple road and the spiritual resonance of the waves, offering travelers a sacred piece of their journey to take back home.
+            </p>
           </div>
         </div>
         
-        <div class="hero-interactive-showcase animate-fade-in">
-          <!-- 3D Layer Stack -->
-          <div class="stack-showcase" id="hero-3d-stack">
-            <div class="stack-layer layer-back"></div>
-            <div class="stack-layer layer-middle"></div>
-            <div class="stack-layer layer-front">
-              <div class="card-display">
-                <img src="WhatsApp Image 2026-07-05 at 11.49.01 AM.jpeg" alt="Fine Indian Craftsmanship Detail" class="display-img">
-                <div class="card-overlay-text">
-                  <h3>Exquisite Rosewood Art</h3>
-                  <p>Hand-crafted in Kanyakumari</p>
-                </div>
-              </div>
+        <div class="story-col-visual reveal-ready">
+          <!-- Heritage in Motion staggered background image collage -->
+          <div class="collage-wrapper">
+            <div class="collage-img c-img-1 parallax-img-item" data-speed="-0.08" data-rotation="-4">
+              <img src="9.jpeg" alt="Stone Temple Gopuram Model">
+            </div>
+            <div class="collage-img c-img-2 parallax-img-item" data-speed="0.1" data-rotation="3">
+              <img src="6.jpeg" alt="Brass Bhagavathy Amman Lamp">
+            </div>
+            <div class="collage-img c-img-3 parallax-img-item" data-speed="0.03" data-rotation="-8">
+              <img src="WhatsApp Image 2026-07-05 at 11.49.01 AM.jpeg" alt="Fine Indian Craftsmanship Detail">
             </div>
           </div>
         </div>
       </div>
-      
-      <div class="scroll-down-indicator">
-        <span class="mouse-icon">
-          <span class="wheel"></span>
-        </span>
-        <span class="arrow-down"></span>
-      </div>
-    </section>
 
-    <!-- Heritage & Historical Narrative Section -->
-    <section id="heritage" class="heritage-section">
-      <!-- Unique Animated Background: Ocean Stones, Bridges, Glass Bridge, Palm Trees, Birds & Monkeys -->
-      <div class="section-bg-animation heritage-bg">
-        <!-- Topbase stones overhang & dripping cinematic drops -->
-        <div class="bg-topbase-stones">
-          <svg viewBox="0 0 1440 80" preserveAspectRatio="none" class="topbase-stones-svg">
-            <path d="M 0 0 L 1440 0 L 1440 25 C 1300 45, 1200 15, 1050 35 C 900 15, 800 50, 650 30 C 500 20, 350 45, 200 25 C 100 35, 0 15, 0 25 Z" fill="var(--bg-medium)" opacity="0.4" />
-            <path d="M 150 20 Q 155 45 150 60 M 380 25 Q 385 55 380 75 M 720 30 Q 725 60 720 80 M 1050 20 Q 1055 50 1050 70 M 1300 25 Q 1305 45 1300 55" stroke="var(--color-primary)" stroke-width="2" fill="none" opacity="0.3" />
-          </svg>
-        </div>
-        <div class="bg-dripping-drops">
-          <div class="water-drop drop-1"></div>
-          <div class="water-drop drop-2"></div>
-          <div class="water-drop drop-3"></div>
-          <div class="water-drop drop-4"></div>
-          <div class="water-drop drop-5"></div>
-          <div class="water-drop drop-6"></div>
-          <div class="water-drop drop-7"></div>
-          <div class="water-drop drop-8"></div>
-          <div class="water-drop drop-9"></div>
-          <div class="water-drop drop-10"></div>
-        </div>
-
-        <!-- High density colorful falling shooting stars -->
-        <div class="sky-falling-stars">
-          <div class="falling-star star-red fs-1"></div>
-          <div class="falling-star star-blue fs-2"></div>
-          <div class="falling-star star-gold fs-3"></div>
-          <div class="falling-star star-green fs-4"></div>
-          <div class="falling-star star-purple fs-5"></div>
-          <div class="falling-star star-cyan fs-6"></div>
-          <div class="falling-star star-magenta fs-7"></div>
-          <div class="falling-star star-yellow fs-8"></div>
-          <div class="falling-star star-orange fs-9"></div>
-          <div class="falling-star star-teal fs-10"></div>
-          <div class="falling-star star-white fs-11"></div>
-          <div class="falling-star star-pink fs-12"></div>
-        </div>
-        <div class="bg-stone-bridges">
-          <svg viewBox="0 0 1440 200" preserveAspectRatio="none" class="bg-stones-svg">
-            <!-- Rocky shore rocks -->
-            <path d="M0,160 C120,150 200,180 320,170 C440,160 550,190 680,175 C800,160 920,185 1050,170 C1180,155 1300,180 1440,165 L1440,200 L0,200 Z" fill="var(--bg-light)" opacity="0.6"/>
-            <!-- Stone Arch Bridge outlines -->
-            <path d="M80,165 A30,30 0 0,1 140,165 M140,165 A30,30 0 0,1 200,165 M200,165 A30,30 0 0,1 260,165" stroke="var(--text-muted)" stroke-width="4" fill="none" opacity="0.25"/>
-            <path d="M1180,165 A30,30 0 0,1 1240,165 M1240,165 A30,30 0 0,1 1300,165 M1300,165 A30,30 0 0,1 1360,165" stroke="var(--text-muted)" stroke-width="4" fill="none" opacity="0.25"/>
-          </svg>
-          
-          <!-- Cartoon crabs walking on the stones -->
-          <div class="bg-crabs">
-            <div class="bg-crab crab-1">
-              <svg viewBox="0 0 50 30" class="crab-svg">
-                <ellipse cx="25" cy="15" rx="12" ry="8" fill="var(--color-accent-orange)" />
-                <circle cx="20" cy="5" r="2" fill="#fff" /><circle cx="20" cy="5" r="1" fill="#000" />
-                <circle cx="30" cy="5" r="2" fill="#fff" /><circle cx="30" cy="5" r="1" fill="#000" />
-                <path d="M 12 15 Q 5 5 10 2 M 38 15 Q 45 5 40 2" stroke="var(--color-accent-orange)" stroke-width="2" fill="none" />
-                <path d="M 15 20 L 10 26 M 20 22 L 17 28 M 30 22 L 33 28 M 35 20 L 40 26" stroke="var(--color-accent-orange)" stroke-width="2" />
-              </svg>
-            </div>
-            <div class="bg-crab crab-2">
-              <svg viewBox="0 0 50 30" class="crab-svg">
-                <ellipse cx="25" cy="15" rx="12" ry="8" fill="var(--color-accent-orange)" />
-                <circle cx="20" cy="5" r="2" fill="#fff" /><circle cx="20" cy="5" r="1" fill="#000" />
-                <circle cx="30" cy="5" r="2" fill="#fff" /><circle cx="30" cy="5" r="1" fill="#000" />
-                <path d="M 12 15 Q 5 5 10 2 M 38 15 Q 45 5 40 2" stroke="var(--color-accent-orange)" stroke-width="2" fill="none" />
-                <path d="M 15 20 L 10 26 M 20 22 L 17 28 M 30 22 L 33 28 M 35 20 L 40 26" stroke="var(--color-accent-orange)" stroke-width="2" />
-              </svg>
-            </div>
-          </div>
-          
-          <!-- Animated Fisherman throwing net into the sea -->
-          <div class="bg-fisherman">
-            <svg viewBox="0 0 160 120" class="fisherman-svg">
-              <path d="M 10 120 L 30 85 L 55 85 L 45 120 Z" fill="var(--text-muted)" opacity="0.3" />
-              <g class="fisherman-body-group">
-                <path d="M 28 85 Q 32 60 35 50 L 40 52 L 34 85 Z" fill="var(--text-muted)" opacity="0.75" />
-                <circle cx="37" cy="44" r="4.5" fill="var(--text-muted)" opacity="0.75" />
-                <path class="fisherman-throw-arm" d="M 33 55 Q 42 35 55 40" fill="none" stroke="var(--text-muted)" stroke-width="2.5" stroke-linecap="round" opacity="0.8" />
-              </g>
-              <path class="fishing-net-shape" d="M 50 45 Q 80 10 110 35 Q 85 70 50 45 Z" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.8" />
-              <path class="fishing-net-splash" d="M 90 65 C 85 65, 88 60, 92 60 C 96 60, 98 65, 94 65 Z" fill="none" stroke="var(--color-primary)" stroke-width="1.5" opacity="0" />
-            </svg>
+      <!-- Section 2: Artisan Connection -->
+      <div class="story-row">
+        <div class="story-col-text">
+          <div class="story-card reveal-ready">
+            <span class="section-badge">Artisan Connection</span>
+            <h2>Deep Traditions, Decades of Craft</h2>
+            <p>
+              Behind the silent beauty of our wooden carvings lies the sweat and devotion of South India's living masters. Over the decades, we have forged unbreakable bonds with local hereditary artisans who have inherited their skills from ancestors who built the stone temples of old.
+            </p>
+            <p>
+              Every fine detail—from the soft curve of Ganesha's trunk to the intricate scrollwork of our heritage mirror frames—is carved by hand from premium timber. By keeping these artisans connected to the global stage, we help preserve a dying language of tools and wood, ensuring that their unmatched mastery survives for generations to come.
+            </p>
           </div>
         </div>
         
-        <!-- Modern Glass Bridge Silhouette -->
-        <div class="bg-glass-bridge">
-          <svg viewBox="0 0 800 220" class="glass-bridge-svg">
-            <line x1="150" y1="220" x2="150" y2="90" stroke="var(--text-muted)" stroke-width="3" opacity="0.12"/>
-            <line x1="300" y1="220" x2="300" y2="70" stroke="var(--text-muted)" stroke-width="3" opacity="0.12"/>
-            <line x1="450" y1="220" x2="450" y2="70" stroke="var(--text-muted)" stroke-width="3" opacity="0.12"/>
-            <line x1="600" y1="220" x2="600" y2="90" stroke="var(--text-muted)" stroke-width="3" opacity="0.12"/>
-            <path d="M100,210 Q375,30 650,210" fill="none" stroke="var(--color-primary)" stroke-width="2" opacity="0.15"/>
-            <!-- Glass Deck glowing line -->
-            <path class="glass-deck-path" d="M100,90 L650,90 L650,95 L100,95 Z" fill="rgba(0, 245, 212, 0.25)" filter="drop-shadow(0 0 6px var(--color-primary))"/>
-            <!-- Handrails -->
-            <line x1="100" y1="80" x2="650" y2="80" stroke="var(--color-primary)" stroke-width="1.5" opacity="0.3"/>
-            <line x1="225" y1="80" x2="225" y2="90" stroke="var(--color-primary)" stroke-width="1" opacity="0.2"/>
-            <line x1="375" y1="80" x2="375" y2="90" stroke="var(--color-primary)" stroke-width="1" opacity="0.2"/>
-            <line x1="525" y1="80" x2="525" y2="90" stroke="var(--color-primary)" stroke-width="1" opacity="0.2"/>
-          </svg>
-        </div>
-
-        <div class="bg-tree-silhouettes">
-          <div class="palm-tree palm-left">
-            <svg viewBox="0 0 120 180" class="palm-svg">
-              <path class="trunk" d="M15,180 Q22,100 40,40 Q43,40 30,180 Z" />
-              <g class="fronds" transform="translate(40, 40)">
-                <path d="M0,0 C-15,-5 -35,5 -45,18 C-35,12 -15,5 0,0 Z" />
-                <path d="M0,0 C-12,-18 5,-28 20,-30 C12,-20 0,-10 0,0 Z" />
-                <path d="M0,0 C12,-18 30,-12 40,5 C30,-2 15,-8 0,0 Z" />
-                <path d="M0,0 C-8,-22 -25,-25 -38,-18 C-25,-18 -10,-10 0,0 Z" />
-              </g>
-            </svg>
-          </div>
-          <div class="palm-tree palm-right">
-            <svg viewBox="0 0 120 180" class="palm-svg">
-              <path class="trunk" d="M105,180 Q97,100 77,40 Q74,40 87,180 Z" />
-              <g class="fronds" transform="translate(77, 40)">
-                <path d="M0,0 C15,-5 35,5 45,18 C35,12 15,5 0,0 Z" />
-                <path d="M0,0 C12,-18 -5,-28 -20,-30 C-12,-20 0,-10 0,0 Z" />
-                <path d="M0,0 C-12,-18 -30,-12 -40,5 C-30,-2 -15,-8 0,0 Z" />
-                <path d="M0,0 C8,-22 25,-25 38,-18 C25,-18 10,-10 0,0 Z" />
-              </g>
-            </svg>
-          </div>
-        </div>
-
-        <!-- Monkeys sitting on paths and swaying branches -->
-        <div class="bg-monkeys">
-          <!-- Left Monkey clinging to tree -->
-          <div class="bg-monkey monkey-left-cling">
-            <svg viewBox="0 0 60 60" class="monkey-svg">
-              <circle cx="30" cy="30" r="8" fill="var(--text-muted)" opacity="0.3"/>
-              <circle cx="30" cy="18" r="6" fill="var(--text-muted)" opacity="0.3"/>
-              <!-- tail -->
-              <path class="monkey-tail" d="M30,38 Q35,46 32,50 Q28,52 30,56" fill="none" stroke="var(--text-muted)" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
-              <!-- face detail -->
-              <circle cx="30" cy="18" r="4.5" fill="var(--bg-light)"/>
-              <circle cx="28" cy="17" r="1" fill="var(--text-muted)"/>
-              <circle cx="32" cy="17" r="1" fill="var(--text-muted)"/>
-            </svg>
-          </div>
-          <!-- Monkey sitting on the bridge -->
-          <div class="bg-monkey monkey-bridge-sit">
-            <svg viewBox="0 0 60 60" class="monkey-svg">
-              <circle cx="30" cy="32" r="9" fill="var(--text-muted)" opacity="0.35"/>
-              <circle cx="30" cy="19" r="6.5" fill="var(--text-muted)" opacity="0.35"/>
-              <path class="monkey-tail" d="M30,41 Q36,47 42,42 Q40,36 36,36" fill="none" stroke="var(--text-muted)" stroke-width="2" opacity="0.35"/>
-              <!-- Face details -->
-              <circle cx="30" cy="19" r="5" fill="var(--bg-medium)"/>
-              <circle cx="28" cy="18" r="1.2" fill="var(--text-muted)"/>
-              <circle cx="32" cy="18" r="1.2" fill="var(--text-muted)"/>
-            </svg>
-          </div>
-          <!-- New Cartoon Monkey hanging/swinging -->
-          <div class="bg-monkey monkey-hanging">
-            <svg viewBox="0 0 60 80" class="monkey-svg">
-              <path d="M 30 0 L 30 25" stroke="var(--text-muted)" stroke-width="1.5" stroke-dasharray="2,2" opacity="0.3" /> <!-- Vine -->
-              <circle cx="30" cy="40" r="8" fill="var(--text-muted)" opacity="0.3" />
-              <circle cx="30" cy="28" r="6" fill="var(--text-muted)" opacity="0.3" />
-              <path class="monkey-tail" d="M 30 48 Q 22 55 25 62" fill="none" stroke="var(--text-muted)" stroke-width="2" opacity="0.3" />
-              <circle cx="30" cy="28" r="4.5" fill="var(--bg-light)" />
-            </svg>
-          </div>
-        </div>
-
-        <!-- Animated Cartoon Dolphins jumping in background waves -->
-        <div class="bg-dolphins">
-          <div class="bg-dolphin dolphin-1">
-            <svg viewBox="0 0 100 100" class="dolphin-svg">
-              <path d="M 10 80 Q 40 10 80 40 Q 50 45 20 80 Z" fill="var(--color-primary)" opacity="0.4"/>
-              <path d="M 45 35 Q 55 20 60 30 Q 52 40 45 35 Z" fill="var(--color-primary)" opacity="0.4"/>
-            </svg>
-          </div>
-          <div class="bg-dolphin dolphin-2">
-            <svg viewBox="0 0 100 100" class="dolphin-svg">
-              <path d="M 10 80 Q 40 10 80 40 Q 50 45 20 80 Z" fill="var(--color-secondary)" opacity="0.3"/>
-              <path d="M 45 35 Q 55 20 60 30 Q 52 40 45 35 Z" fill="var(--color-secondary)" opacity="0.3"/>
-            </svg>
-          </div>
-        </div>
-
-        <!-- Anime wind-drifted floating green leaves -->
-        <div class="anime-leaves-container">
-          <div class="anime-leaf aleaf-1"></div>
-          <div class="anime-leaf aleaf-2"></div>
-          <div class="anime-leaf aleaf-3"></div>
-          <div class="anime-leaf aleaf-4"></div>
-          <div class="anime-leaf aleaf-5"></div>
-        </div>
-
-        <!-- Abundant flying nature birds -->
-        <div class="bg-flying-birds">
-          <div class="bg-bird bg-bird-5">
-            <svg viewBox="0 0 100 100" class="bg-bird-svg"><path class="left-wing" d="M50,50 Q30,20 10,30 Q30,40 50,50 Z" /><path class="right-wing" d="M50,50 Q70,20 90,30 Q70,40 50,50 Z" /></svg>
-          </div>
-          <div class="bg-bird bg-bird-6">
-            <svg viewBox="0 0 100 100" class="bg-bird-svg"><path class="left-wing" d="M50,50 Q30,20 10,30 Q30,40 50,50 Z" /><path class="right-wing" d="M50,50 Q70,20 90,30 Q70,40 50,50 Z" /></svg>
-          </div>
-          <div class="bg-bird bg-bird-7">
-            <svg viewBox="0 0 100 100" class="bg-bird-svg"><path class="left-wing" d="M50,50 Q30,20 10,30 Q30,40 50,50 Z" /><path class="right-wing" d="M50,50 Q70,20 90,30 Q70,40 50,50 Z" /></svg>
-          </div>
-          <div class="bg-bird bg-bird-8">
-            <svg viewBox="0 0 100 100" class="bg-bird-svg"><path class="left-wing" d="M50,50 Q30,20 10,30 Q30,40 50,50 Z" /><path class="right-wing" d="M50,50 Q70,20 90,30 Q70,40 50,50 Z" /></svg>
+        <div class="story-col-visual reveal-ready">
+          <div class="collage-wrapper">
+            <div class="collage-img c-img-1 parallax-img-item" data-speed="0.08" data-rotation="5">
+              <img src="2.jpeg" alt="Rosewood Ganesha Statue">
+            </div>
+            <div class="collage-img c-img-2 parallax-img-item" data-speed="-0.07" data-rotation="-3">
+              <img src="3.jpeg" alt="Sandalwood Carved Elephant">
+            </div>
+            <div class="collage-img c-img-3 parallax-img-item" data-speed="0.04" data-rotation="8">
+              <img src="15.jpeg" alt="Rosewood Mirror Frame">
+            </div>
           </div>
         </div>
       </div>
-      <div class="section-container">
-        
-        <div class="section-header">
-          <span class="sub-heading">Kanyakumari & Sannathi Street</span>
-          <h2 class="section-title">The Sacred Confluence & The Kovil Street</h2>
-          <div class="header-line"></div>
-        </div>
-        
-        <div class="heritage-grid">
-          <div class="heritage-text-content">
-            <div class="info-card">
-              <div class="info-icon"><i class="fa-solid fa-water"></i></div>
-              <div class="info-text">
-                <h3>Triveni Sangam</h3>
-                <p>Kanyakumari is the spiritual threshold of India, where the waters of the Arabian Sea, Bay of Bengal, and Indian Ocean merge in a spectacular natural chorus. The shore has witnessed centuries of maritime history, sacred journeys, and breathtaking sunrises and sunsets overlapping in a single horizon.</p>
-              </div>
-            </div>
-            
-            <div class="info-card">
-              <div class="info-icon"><i class="fa-solid fa-gopuram"></i></div>
-              <div class="info-text">
-                <h3>Sannathi Street (Kovil Street)</h3>
-                <p>Leading directly to the 3,000-year-old Arulmigu Bhagavathy Amman Temple, Sannathi Street is a mystical conduit of incense, bells, and color. Sri Kanya Handicrafts resides in the heart of this ancient temple road, carrying forward generations of native craftsmanship that captures the essence of South Indian devotion.</p>
-              </div>
-            </div>
-            
-            <div class="info-card">
-              <div class="info-icon"><i class="fa-solid fa-gem"></i></div>
-              <div class="info-text">
-                <h3>The Artisan Heritage</h3>
-                <p>Every piece we curate is made using age-old techniques. From deep-grained rosewoods to iridescent seashells collected from Cape Comorin shores, each carving embodies the natural spirit, devotion, and coastal allure of India's southern tip.</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="heritage-video-wrapper">
-            <div class="video-container" id="video-frame">
-              <!-- Inline Video from Workspace folder -->
-              <video id="artisan-video" loop muted playsinline poster="WhatsApp Image 2026-07-05 at 11.49.00 AM.jpeg">
-                <source src="17.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <div class="video-controls-overlay" id="videoOverlay">
-                <div class="play-button-ring">
-                  <i class="fa-solid fa-play" id="playIcon"></i>
-                </div>
-                <p class="video-overlay-title">Watch the Craftsman's Touch</p>
-                <p class="video-overlay-sub">Hover to play, click to unmute</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </section>
 
-    <!-- Map Transformation Section -->
-    <section id="location-map" class="map-section">
-      <!-- Unique Animated Background: Ocean Waves, Trees, Birds -->
-      <div class="section-bg-animation mapping-bg">
-        <!-- Topbase stones overhang & dripping cinematic drops -->
-        <div class="bg-topbase-stones">
-          <svg viewBox="0 0 1440 80" preserveAspectRatio="none" class="topbase-stones-svg">
-            <path d="M 0 0 L 1440 0 L 1440 25 C 1300 45, 1200 15, 1050 35 C 900 15, 800 50, 650 30 C 500 20, 350 45, 200 25 C 100 35, 0 15, 0 25 Z" fill="var(--bg-medium)" opacity="0.4" />
-            <path d="M 150 20 Q 155 45 150 60 M 380 25 Q 385 55 380 75 M 720 30 Q 725 60 720 80 M 1050 20 Q 1055 50 1050 70 M 1300 25 Q 1305 45 1300 55" stroke="var(--color-primary)" stroke-width="2" fill="none" opacity="0.3" />
-          </svg>
-        </div>
-        <div class="bg-dripping-drops">
-          <div class="water-drop drop-1"></div>
-          <div class="water-drop drop-2"></div>
-          <div class="water-drop drop-3"></div>
-          <div class="water-drop drop-4"></div>
-          <div class="water-drop drop-5"></div>
-          <div class="water-drop drop-6"></div>
-          <div class="water-drop drop-7"></div>
-          <div class="water-drop drop-8"></div>
-          <div class="water-drop drop-9"></div>
-          <div class="water-drop drop-10"></div>
-        </div>
-
-        <!-- High density colorful falling shooting stars -->
-        <div class="sky-falling-stars">
-          <div class="falling-star star-red fs-1"></div>
-          <div class="falling-star star-blue fs-2"></div>
-          <div class="falling-star star-gold fs-3"></div>
-          <div class="falling-star star-green fs-4"></div>
-          <div class="falling-star star-purple fs-5"></div>
-          <div class="falling-star star-cyan fs-6"></div>
-          <div class="falling-star star-magenta fs-7"></div>
-          <div class="falling-star star-yellow fs-8"></div>
-          <div class="falling-star star-orange fs-9"></div>
-          <div class="falling-star star-teal fs-10"></div>
-          <div class="falling-star star-white fs-11"></div>
-          <div class="falling-star star-pink fs-12"></div>
-        </div>
-        <div class="bg-wave-layer">
-          <svg viewBox="0 0 1440 120" preserveAspectRatio="none" class="bg-wave-svg">
-            <path d="M0,64L80,58.7C160,53,320,43,480,48C640,53,800,75,960,80C1120,85,1280,75,1360,69.3L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z" fill="var(--bg-medium)"></path>
-          </svg>
-        </div>
-        <!-- Cute animated kids playing along the shore -->
-        <div class="bg-kids-playing">
-          <div class="bg-kid kid-1">
-            <svg viewBox="0 0 50 50" class="kid-svg">
-              <circle cx="25" cy="12" r="5" fill="var(--text-muted)" />
-              <path d="M 25 17 L 25 30 L 17 42 M 25 30 L 33 42 M 25 20 L 12 25 M 25 20 L 38 23" stroke="var(--text-muted)" stroke-width="3" stroke-linecap="round" fill="none" />
-            </svg>
-          </div>
-          <div class="bg-kid kid-2">
-            <svg viewBox="0 0 50 50" class="kid-svg">
-              <circle cx="25" cy="22" r="5" fill="var(--text-muted)" />
-              <path d="M 25 27 Q 22 35 15 42 M 25 35 Q 32 38 38 42 M 25 29 L 14 32 L 18 38" stroke="var(--text-muted)" stroke-width="3" stroke-linecap="round" fill="none" />
-              <path d="M 33 42 L 33 37 L 37 37 L 37 42 Z" fill="var(--text-muted)" />
-            </svg>
+      <!-- Section 3: Mission -->
+      <div class="story-row">
+        <div class="story-col-text">
+          <div class="story-card reveal-ready">
+            <span class="section-badge">Mission</span>
+            <h2>Bringing the Triveni Sangam to the World</h2>
+            <p>
+              The Triveni Sangam is a place of profound union—where the Arabian Sea, the Bay of Bengal, and the Indian Ocean wash away boundaries in a single, roaring tide. Our mission is to mirror this beautiful confluence by bringing the spiritual peace, natural brilliance, and artistic legacy of India's southernmost tip directly to your home.
+            </p>
+            <p>
+              We believe that art is a bridge, and every piece of hand-carved wood or polished ocean shell in your living room should serve as a daily window to the sacred waters of Cape Comorin, carrying blessings and master craftsmanship across continents.
+            </p>
           </div>
         </div>
-        <div class="bg-tree-silhouettes">
-          <div class="palm-tree palm-left">
-            <svg viewBox="0 0 120 180" class="palm-svg">
-              <path class="trunk" d="M20,180 Q25,110 45,50 Q48,50 35,180 Z" />
-              <g class="fronds" transform="translate(45, 50)">
-                <path d="M0,0 C-15,-5 -35,5 -45,18 C-35,12 -15,5 0,0 Z" />
-                <path d="M0,0 C-12,-18 5,-28 20,-30 C12,-20 0,-10 0,0 Z" />
-                <path d="M0,0 C12,-18 30,-12 40,5 C30,-2 15,-8 0,0 Z" />
-                <path d="M0,0 C-8,-22 -25,-25 -38,-18 C-25,-18 -10,-10 0,0 Z" />
-                <path d="M0,0 C-22,5 -38,20 -40,38 C-32,25 -18,12 0,0 Z" />
-              </g>
-            </svg>
-          </div>
-          <div class="palm-tree palm-right">
-            <svg viewBox="0 0 120 180" class="palm-svg">
-              <path class="trunk" d="M100,180 Q95,110 75,50 Q72,50 85,180 Z" />
-              <g class="fronds" transform="translate(75, 50)">
-                <path d="M0,0 C15,-5 35,5 45,18 C35,12 15,5 0,0 Z" />
-                <path d="M0,0 C12,-18 -5,-28 -20,-30 C-12,-20 0,-10 0,0 Z" />
-                <path d="M0,0 C-12,-18 -30,-12 -40,5 C-30,-2 -15,-8 0,0 Z" />
-                <path d="M0,0 C8,-22 25,-25 38,-18 C25,-18 10,-10 0,0 Z" />
-                <path d="M0,0 C22,5 38,20 40,38 C32,25 18,12 0,0 Z" />
-              </g>
-            </svg>
-          </div>
-        </div>
-        <div class="bg-flying-birds">
-          <div class="bg-bird bg-bird-1">
-            <svg viewBox="0 0 100 100" class="bg-bird-svg">
-              <path class="left-wing" d="M50,50 Q30,20 10,30 Q30,40 50,50 Z" />
-              <path class="right-wing" d="M50,50 Q70,20 90,30 Q70,40 50,50 Z" />
-            </svg>
-          </div>
-          <div class="bg-bird bg-bird-2">
-            <svg viewBox="0 0 100 100" class="bg-bird-svg">
-              <path class="left-wing" d="M50,50 Q30,20 10,30 Q30,40 50,50 Z" />
-              <path class="right-wing" d="M50,50 Q70,20 90,30 Q70,40 50,50 Z" />
-            </svg>
+        
+        <div class="story-col-visual reveal-ready">
+          <div class="collage-wrapper">
+            <div class="collage-img c-img-1 parallax-img-item" data-speed="-0.09" data-rotation="-6">
+              <img src="16.jpeg" alt="Teak Wooden Temple Chariot Model">
+            </div>
+            <div class="collage-img c-img-2 parallax-img-item" data-speed="0.06" data-rotation="4">
+              <img src="WhatsApp Image 2026-07-05 at 11.49.00 AM.jpeg" alt="Polished Abalone Shell Display">
+            </div>
+            <div class="collage-img c-img-3 parallax-img-item" data-speed="0.02" data-rotation="-10">
+              <img src="11.jpeg" alt="Giant Carved Conch Shell">
+            </div>
           </div>
         </div>
       </div>
-      <div class="section-container">
-        
-        <div class="section-header">
-          <span class="sub-heading">Find Us on Sannathi Street</span>
-          <h2 class="section-title">The Map Transformation</h2>
-          <p class="section-desc">Click the card below to see an interactive, animated route transforming to our store.</p>
-          <div class="header-line"></div>
-        </div>
-        
-        <div class="map-transform-container">
-          <div class="map-card-inner" id="mapCard">
-            
-            <!-- FRONT SIDE: Interactive Guide Trigger -->
-            <div class="map-card-front glass-effect">
-              <div class="map-front-content">
-                <div class="map-pulse-sphere">
-                  <div class="map-pulse-glow"></div>
-                  <i class="fa-solid fa-map-location-dot"></i>
-                </div>
-                <h3>Sannathi Street Route Map</h3>
-                <p>Sri Kanya Handicrafts is situated directly on Sannathi Street leading to Bhagavathy Amman Temple.</p>
-                <button class="map-btn-action" id="mapTransformBtn">
-                  <span>Transform Layout</span> <i class="fa-solid fa-rotate"></i>
-                </button>
-              </div>
-            </div>
-            
-            <!-- BACK SIDE: The Animated Vector Map -->
-            <div class="map-card-back glass-effect">
-              <div class="map-back-grid">
-                
-                <!-- SVG map rendering -->
-                <div class="map-svg-container">
-                  <svg viewBox="0 0 600 350" class="map-svg-vector" id="mapVectorSvg">
-                    <!-- Grid Background Lines -->
-                    <defs>
-                      <pattern id="mapGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(0, 245, 212, 0.05)" stroke-width="1" />
-                      </pattern>
-                      <linearGradient id="oceanGrad" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0%" stop-color="var(--color-primary)" stop-opacity="0.1"/>
-                        <stop offset="100%" stop-color="var(--color-accent-blue)" stop-opacity="0.2"/>
-                      </linearGradient>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#mapGrid)" />
-                    
-                    <!-- Ocean Coastline Right Side -->
-                    <path d="M 480 0 Q 450 150 500 350 L 600 350 L 600 0 Z" fill="url(#oceanGrad)" stroke="rgba(0, 245, 212, 0.2)" stroke-width="2" />
-                    
-                    <!-- Landmark Roads -->
-                    <!-- Sannathi Street (Kovil Street) running East-West to Temple -->
-                    <path d="M 50 175 L 470 175" stroke="#4a5d78" stroke-width="24" stroke-linecap="round" opacity="0.6"/>
-                    <path d="M 50 175 L 470 175" stroke="var(--bg-light)" stroke-width="20" stroke-linecap="round"/>
-                    <text x="250" y="140" fill="var(--text-muted)" font-size="11" font-weight="600" letter-spacing="1">SANNATHI STREET</text>
-                    
-                    <!-- Shore Road running North-South -->
-                    <path d="M 450 0 L 450 350" stroke="#4a5d78" stroke-width="16" stroke-linecap="round" opacity="0.6"/>
-                    <path d="M 450 0 L 450 350" stroke="var(--bg-light)" stroke-width="12" stroke-linecap="round"/>
-                    
-                    <!-- Landmark: Bhagavathy Amman Temple -->
-                    <g transform="translate(450, 175)">
-                      <circle r="18" fill="var(--color-accent-orange)" opacity="0.3" class="map-glow" />
-                      <circle r="12" fill="var(--color-accent-orange)" />
-                      <path d="M-6-4 L0-10 L6-4 L6 6 L-6 6 Z" fill="#fff" />
-                    </g>
-                    <text x="478" y="205" fill="var(--text-main)" font-size="11" font-weight="700">Bhagavathy Temple</text>
-                    
-                    <!-- Landmark: Railway Station (Start point) -->
-                    <g transform="translate(80, 175)">
-                      <circle r="10" fill="var(--color-secondary)" />
-                      <rect x="-4" y="-4" width="8" height="8" fill="#fff" />
-                    </g>
-                    <text x="50" y="210" fill="var(--text-muted)" font-size="10">Railway Stn.</text>
-                    
-                    <!-- Target: Sri Kanya Handicrafts -->
-                    <g transform="translate(340, 175)" class="shop-pin">
-                      <circle r="16" fill="var(--color-primary)" opacity="0.4" class="map-ping" />
-                      <circle r="8" fill="var(--color-primary)" />
-                      <path d="M 0 0 L 0 -12 L -6 -6 Z" fill="var(--color-sunset-gold)" />
-                    </g>
-                    <text x="290" y="212" fill="var(--color-primary)" font-size="11" font-weight="700">SRI KANYA CRAFTS</text>
 
-                    <!-- ANIMATED DRAWING ROUTE PATH -->
-                    <path d="M 80 175 L 340 175" id="routePath" stroke="var(--color-sunset-gold)" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="300" stroke-dashoffset="300" />
-                  </svg>
-                </div>
-                
-                <!-- Sidebar route directions -->
-                <div class="map-sidebar">
-                  <h3>Sannathi Street Route</h3>
-                  <div class="route-directions">
-                    <div class="direction-step">
-                      <div class="step-num">1</div>
-                      <p>Start from <strong>Kanyakumari Junction Railway Station</strong>.</p>
-                    </div>
-                    <div class="direction-step">
-                      <div class="step-num">2</div>
-                      <p>Walk straight Eastwards along <strong>Sannathi Street</strong> (Temple Road).</p>
-                    </div>
-                    <div class="direction-step">
-                      <div class="step-num">3</div>
-                      <p>We are located right on the street, directly in front of the **Bhagavathy Amman Temple**.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="map-sidebar-actions">
-                    <a href="https://maps.google.com/?q=Sri+Kanya+Handicrafts+Sannathi+Street+Kanyakumari" target="_blank" class="sidebar-gps-btn">
-                      <i class="fa-solid fa-location-crosshairs"></i> Open in Maps
-                    </a>
-                    <button class="sidebar-reset-btn" id="mapResetBtnBack">
-                      <i class="fa-solid fa-rotate-left"></i> Reset Card
-                    </button>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-            
-          </div>
-        </div>
-        
+      <!-- Action: Go Back To Home -->
+      <div class="about-actions reveal-ready">
+        <a href="index.html" class="btn btn-primary nav-button">
+          <i class="fa-solid fa-arrow-left"></i> Go back to Home
+        </a>
       </div>
-    </section>
 
-    <!-- Flip Flop Materials Gallery Section -->
-    <section id="gallery" class="gallery-section">
-      <!-- Unique Animated Background: Ocean Waves, Trees, Birds -->
-      <div class="section-bg-animation gallery-bg">
-        <!-- Topbase stones overhang & dripping cinematic drops -->
-        <div class="bg-topbase-stones">
-          <svg viewBox="0 0 1440 80" preserveAspectRatio="none" class="topbase-stones-svg">
-            <path d="M 0 0 L 1440 0 L 1440 25 C 1300 45, 1200 15, 1050 35 C 900 15, 800 50, 650 30 C 500 20, 350 45, 200 25 C 100 35, 0 15, 0 25 Z" fill="var(--bg-medium)" opacity="0.4" />
-            <path d="M 150 20 Q 155 45 150 60 M 380 25 Q 385 55 380 75 M 720 30 Q 725 60 720 80 M 1050 20 Q 1055 50 1050 70 M 1300 25 Q 1305 45 1300 55" stroke="var(--color-primary)" stroke-width="2" fill="none" opacity="0.3" />
-          </svg>
-        </div>
-        <!-- Subtle traditional Dravidian temple border ornament -->
-        <div class="bg-temple-mandala-ornament">
-          <svg viewBox="0 0 100 100" class="mandala-svg">
-            <circle cx="50" cy="50" r="45" fill="none" stroke="var(--color-sunset-gold)" stroke-width="0.5" opacity="0.12" />
-            <polygon points="50,10 90,50 50,90 10,50" fill="none" stroke="var(--color-sunset-gold)" stroke-width="0.5" opacity="0.12" />
-            <circle cx="50" cy="50" r="30" fill="none" stroke="var(--color-primary)" stroke-width="0.5" opacity="0.1" />
-          </svg>
-        </div>
-
-        <!-- High Density water drops for Flip-Flop Showcase -->
-        <div class="bg-dripping-drops gallery-dripping-drops">
-          <div class="water-drop drop-1"></div>
-          <div class="water-drop drop-2"></div>
-          <div class="water-drop drop-3"></div>
-          <div class="water-drop drop-4"></div>
-          <div class="water-drop drop-5"></div>
-          <div class="water-drop drop-6"></div>
-          <div class="water-drop drop-7"></div>
-          <div class="water-drop drop-8"></div>
-          <div class="water-drop drop-9"></div>
-          <div class="water-drop drop-10"></div>
-          <div class="water-drop drop-11"></div>
-          <div class="water-drop drop-12"></div>
-          <div class="water-drop drop-13"></div>
-          <div class="water-drop drop-14"></div>
-          <div class="water-drop drop-15"></div>
-        </div>
-
-        <!-- High density colorful falling shooting stars -->
-        <div class="sky-falling-stars">
-          <div class="falling-star star-red fs-1"></div>
-          <div class="falling-star star-blue fs-2"></div>
-          <div class="falling-star star-gold fs-3"></div>
-          <div class="falling-star star-green fs-4"></div>
-          <div class="falling-star star-purple fs-5"></div>
-          <div class="falling-star star-cyan fs-6"></div>
-          <div class="falling-star star-magenta fs-7"></div>
-          <div class="falling-star star-yellow fs-8"></div>
-          <div class="falling-star star-orange fs-9"></div>
-          <div class="falling-star star-teal fs-10"></div>
-          <div class="falling-star star-white fs-11"></div>
-          <div class="falling-star star-pink fs-12"></div>
-        </div>
-        <div class="bg-wave-layer">
-          <svg viewBox="0 0 1440 120" preserveAspectRatio="none" class="bg-wave-svg">
-            <path d="M0,45L60,48C120,51,240,57,360,53.3C480,50,600,37,720,37.3C840,37,960,50,1080,53.3C1200,57,1320,51,1380,48L1440,45L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z" fill="var(--bg-light)"></path>
-          </svg>
-        </div>
-        <!-- Animated boats/ships with glowing lanterns in background waves -->
-        <div class="bg-ships-boats">
-          <div class="bg-ship ship-1">
-            <svg viewBox="0 0 100 60" class="ship-svg">
-              <path d="M 15 40 L 85 40 L 75 52 L 25 52 Z" fill="var(--text-muted)" opacity="0.3" />
-              <line x1="50" y1="40" x2="50" y2="10" stroke="var(--text-muted)" stroke-width="2" opacity="0.3" />
-              <path d="M 50 15 L 75 30 L 50 35 Z" fill="var(--text-muted)" opacity="0.25" />
-              <circle cx="50" cy="12" r="3.5" class="boat-lamp" />
-            </svg>
-          </div>
-          
-          <!-- Titanic pose ship -->
-          <div class="bg-ship ship-titanic">
-            <svg viewBox="0 0 120 70" class="titanic-svg">
-              <path d="M 10 45 L 90 45 L 110 25 L 105 25 L 88 40 L 10 40 Z" fill="var(--text-muted)" opacity="0.35" />
-              <rect x="25" y="28" width="55" height="12" fill="var(--text-muted)" opacity="0.3" />
-              <line x1="108" y1="25" x2="108" y2="15" stroke="var(--text-muted)" stroke-width="1.5" opacity="0.4" />
-              <!-- Titanic pose figures at bow -->
-              <circle cx="103" cy="20" r="1.5" fill="var(--color-primary)" opacity="0.6" />
-              <line x1="103" y1="21" x2="103" y2="25" stroke="var(--color-primary)" stroke-width="0.8" opacity="0.6" />
-              <circle cx="106" cy="19" r="1.5" fill="var(--color-secondary)" opacity="0.6" />
-              <line x1="106" y1="20" x2="106" y2="25" stroke="var(--color-secondary)" stroke-width="0.8" opacity="0.6" />
-              <path d="M 104 21 Q 107 16 110 21" fill="none" stroke="var(--color-secondary)" stroke-width="0.6" opacity="0.8" />
-              <circle cx="107" cy="23" r="2.5" class="boat-lamp" />
-            </svg>
-          </div>
-
-          <div class="bg-boat boat-3">
-            <svg viewBox="0 0 60 40" class="boat-svg">
-              <path d="M 10 28 L 50 28 L 42 36 L 18 36 Z" fill="var(--text-muted)" opacity="0.3" />
-              <path d="M 30 28 L 30 10 L 15 22 Z" fill="var(--text-muted)" opacity="0.25" />
-              <circle cx="15" cy="20" r="3" class="boat-lamp" />
-            </svg>
-          </div>
-        </div>
-
-        <!-- Shops with colorful lights framing the sides of the gallery -->
-        <div class="bg-gallery-shops">
-          <div class="gallery-shop shop-left">
-            <svg viewBox="0 0 100 200" class="gallery-shop-svg">
-              <rect x="10" y="40" width="80" height="160" fill="var(--glass-card)" stroke="var(--glass-border)" />
-              <path d="M 0 40 L 50 10 L 100 40 Z" fill="var(--color-primary)" opacity="0.85" />
-              <!-- Colored lights string -->
-              <circle cx="20" cy="55" r="4" fill="#ff4757" class="gallery-shop-light gl-1" />
-              <circle cx="40" cy="55" r="4" fill="#2ed573" class="gallery-shop-light gl-2" />
-              <circle cx="60" cy="55" r="4" fill="#1e90ff" class="gallery-shop-light gl-3" />
-              <circle cx="80" cy="55" r="4" fill="#ffa502" class="gallery-shop-light gl-4" />
-            </svg>
-          </div>
-          <div class="gallery-shop shop-right">
-            <svg viewBox="0 0 100 200" class="gallery-shop-svg">
-              <rect x="10" y="40" width="80" height="160" fill="var(--glass-card)" stroke="var(--glass-border)" />
-              <path d="M 0 40 L 50 10 L 100 40 Z" fill="var(--color-secondary)" opacity="0.85" />
-              <circle cx="20" cy="55" r="4" fill="#ffa502" class="gallery-shop-light gl-4" />
-              <circle cx="40" cy="55" r="4" fill="#1e90ff" class="gallery-shop-light gl-3" />
-              <circle cx="60" cy="55" r="4" fill="#2ed573" class="gallery-shop-light gl-2" />
-              <circle cx="80" cy="55" r="4" fill="#ff4757" class="gallery-shop-light gl-1" />
-            </svg>
-          </div>
-        </div>
-
-        <!-- Drifting car on the beach sand base -->
-        <div class="bg-drifting-car">
-          <svg viewBox="0 0 70 30" class="car-svg">
-            <path d="M 10 20 Q 15 10 25 10 L 45 10 Q 55 10 60 20 Z" fill="var(--text-muted)" opacity="0.4" />
-            <rect x="5" y="16" width="60" height="8" rx="2" fill="var(--text-muted)" opacity="0.4" />
-            <circle cx="18" cy="24" r="5" fill="#111" />
-            <circle cx="50" cy="24" r="5" fill="#111" />
-          </svg>
-        </div>
-
-        <!-- Bouncing beach balls in waves -->
-        <div class="bg-beach-balls">
-          <div class="bg-beach-ball ball-1">
-            <svg viewBox="0 0 30 30" class="ball-svg">
-              <circle cx="15" cy="15" r="14" fill="none" stroke="var(--text-muted)" stroke-width="1" />
-              <path d="M 15 1 A 14 14 0 0 1 29 15 L 15 15 Z" fill="#ff4757" />
-              <path d="M 29 15 A 14 14 0 0 1 15 29 L 15 15 Z" fill="#2ed573" />
-              <path d="M 15 29 A 14 14 0 0 1 1 15 L 15 15 Z" fill="#1e90ff" />
-              <path d="M 1 15 A 14 14 0 0 1 15 1 L 15 15 Z" fill="#ffa502" />
-            </svg>
-          </div>
-          <div class="bg-beach-ball ball-2">
-            <svg viewBox="0 0 30 30" class="ball-svg">
-              <circle cx="15" cy="15" r="14" fill="none" stroke="var(--text-muted)" stroke-width="1" />
-              <path d="M 15 1 A 14 14 0 0 1 29 15 L 15 15 Z" fill="#2ed573" />
-              <path d="M 29 15 A 14 14 0 0 1 15 29 L 15 15 Z" fill="#ffa502" />
-              <path d="M 15 29 A 14 14 0 0 1 1 15 L 15 15 Z" fill="#ff4757" />
-              <path d="M 1 15 A 14 14 0 0 1 15 1 L 15 15 Z" fill="#1e90ff" />
-            </svg>
-          </div>
-        </div>
-        <div class="bg-tree-silhouettes">
-          <div class="palm-tree palm-left">
-            <svg viewBox="0 0 120 180" class="palm-svg">
-              <path class="trunk" d="M10,180 Q18,100 38,40 Q41,40 28,180 Z" />
-              <g class="fronds" transform="translate(38, 40)">
-                <path d="M0,0 C-15,-5 -35,5 -45,18 C-35,12 -15,5 0,0 Z" />
-                <path d="M0,0 C-12,-18 5,-28 20,-30 C12,-20 0,-10 0,0 Z" />
-                <path d="M0,0 C12,-18 30,-12 40,5 C30,-2 15,-8 0,0 Z" />
-                <path d="M0,0 C-8,-22 -25,-25 -38,-18 C-25,-18 -10,-10 0,0 Z" />
-              </g>
-            </svg>
-          </div>
-          <div class="palm-tree palm-right">
-            <svg viewBox="0 0 120 180" class="palm-svg">
-              <path class="trunk" d="M110,180 Q102,100 82,40 Q79,40 92,180 Z" />
-              <g class="fronds" transform="translate(82, 40)">
-                <path d="M0,0 C15,-5 35,5 45,18 C35,12 15,5 0,0 Z" />
-                <path d="M0,0 C12,-18 -5,-28 -20,-30 C-12,-20 0,-10 0,0 Z" />
-                <path d="M0,0 C-12,-18 -30,-12 -40,5 C-30,-2 -15,-8 0,0 Z" />
-                <path d="M0,0 C8,-22 25,-25 38,-18 C25,-18 10,-10 0,0 Z" />
-              </g>
-            </svg>
-          </div>
-        </div>
-        <div class="bg-flying-birds">
-          <div class="bg-bird bg-bird-3">
-            <svg viewBox="0 0 100 100" class="bg-bird-svg">
-              <path class="left-wing" d="M50,50 Q30,20 10,30 Q30,40 50,50 Z" />
-              <path class="right-wing" d="M50,50 Q70,20 90,30 Q70,40 50,50 Z" />
-            </svg>
-          </div>
-          <div class="bg-bird bg-bird-4">
-            <svg viewBox="0 0 100 100" class="bg-bird-svg">
-              <path class="left-wing" d="M50,50 Q30,20 10,30 Q30,40 50,50 Z" />
-              <path class="right-wing" d="M50,50 Q70,20 90,30 Q70,40 50,50 Z" />
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div class="section-container">
-        
-        <div class="section-header">
-          <span class="sub-heading">Artisan Creations</span>
-          <h2 class="section-title">The Flip-Flop Showcase</h2>
-          <p class="section-desc">Flip each card to reveal the raw materials, crafting time, and regional heritage of each artifact.</p>
-          <div class="header-line"></div>
-        </div>
-
-        <!-- Category Filter Tabs -->
-        <div class="filter-container">
-          <button class="filter-tab active" data-category="all" id="tab-all">All Crafts</button>
-          <button class="filter-tab" data-category="wood" id="tab-wood">Wood Carvings</button>
-          <button class="filter-tab" data-category="shell" id="tab-shell">Seashell Art</button>
-          <button class="filter-tab" data-category="temple" id="tab-temple">Temple Souvenirs</button>
-        </div>
-        
-        <!-- Flip Cards Grid -->
-        <div class="gallery-grid" id="galleryGrid">
-          
-          <!-- Card 1 -->
-          <div class="flip-card-container" data-category="wood">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="2.jpeg" alt="Rosewood Ganesha Statue">
-                <div class="card-front-hud">
-                  <span class="category-badge">Wood Carving</span>
-                  <h3>Rosewood Ganesha</h3>
-                </div>
-              </div>
-              <div class="flip-card-back">
-                <div class="back-content">
-                  <div class="back-header">
-                    <span class="material-tag"><i class="fa-solid fa-tree"></i> Rosewood</span>
-                    <h3>Siddhividayak Ganesha</h3>
-                  </div>
-                  <div class="back-details">
-                    <p>Deep-grained heavy Indian Rosewood, intricately carved by master woodworkers in Kanyakumari. Captures details of the trunk, crown, and ornaments.</p>
-                    <div class="specs">
-                      <div class="spec-item"><strong>Carving Time:</strong> 54 Hrs</div>
-                      <div class="spec-item"><strong>Finish:</strong> Beeswax Glaze</div>
-                    </div>
-                  </div>
-                  <a href="https://wa.me/919500083229?text=Hi!%20I'm%20interested%20in%20the%20Rosewood%20Ganesha%20Statue%20from%20Sri%20Kanya%20Handicrafts." target="_blank" class="enquire-btn">
-                    Enquire on WhatsApp <i class="fa-brands fa-whatsapp"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="flip-card-container" data-category="wood">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="3.jpeg" alt="Sandalwood Carved Elephant">
-                <div class="card-front-hud">
-                  <span class="category-badge">Wood Carving</span>
-                  <h3>Sandalwood Elephant</h3>
-                </div>
-              </div>
-              <div class="flip-card-back">
-                <div class="back-content">
-                  <div class="back-header">
-                    <span class="material-tag"><i class="fa-solid fa-tree"></i> Sandalwood</span>
-                    <h3>Ambari Procession Elephant</h3>
-                  </div>
-                  <div class="back-details">
-                    <p>Authentic scented Sandalwood sculpture with internal Jali (hollow lattice-work carving). Radiates a soothing organic fragrance over decades.</p>
-                    <div class="specs">
-                      <div class="spec-item"><strong>Carving Time:</strong> 72 Hrs</div>
-                      <div class="spec-item"><strong>Finish:</strong> Raw Unpolished</div>
-                    </div>
-                  </div>
-                  <a href="https://wa.me/919500083229?text=Hi!%20I'm%20interested%20in%20the%20Sandalwood%20Elephant%20from%20Sri%20Kanya%20Handicrafts." target="_blank" class="enquire-btn">
-                    Enquire on WhatsApp <i class="fa-brands fa-whatsapp"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="flip-card-container" data-category="shell">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="4.jpeg" alt="Ocean Seashell Jewelry Box">
-                <div class="card-front-hud">
-                  <span class="category-badge">Seashell Art</span>
-                  <h3>Mother of Pearl Box</h3>
-                </div>
-              </div>
-              <div class="flip-card-back">
-                <div class="back-content">
-                  <div class="back-header">
-                    <span class="material-tag"><i class="fa-solid fa-water"></i> Seashell</span>
-                    <h3>Iridescent Nacre Chest</h3>
-                  </div>
-                  <div class="back-details">
-                    <p>Lined with hand-polished iridescent Mother of Pearl fragments sourced locally. The shell layers shimmer beautifully reflecting ocean hues.</p>
-                    <div class="specs">
-                      <div class="spec-item"><strong>Carving Time:</strong> 28 Hrs</div>
-                      <div class="spec-item"><strong>Material:</strong> Polished Shells</div>
-                    </div>
-                  </div>
-                  <a href="https://wa.me/919500083229?text=Hi!%20I'm%20interested%20in%20the%20Mother%20of%20Pearl%20Box%20from%20Sri%20Kanya%20Handicrafts." target="_blank" class="enquire-btn">
-                    Enquire on WhatsApp <i class="fa-brands fa-whatsapp"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="flip-card-container" data-category="shell">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="5.jpeg" alt="Seashell Mandala Plate">
-                <div class="card-front-hud">
-                  <span class="category-badge">Seashell Art</span>
-                  <h3>Seashell Mandala</h3>
-                </div>
-              </div>
-              <div class="flip-card-back">
-                <div class="back-content">
-                  <div class="back-header">
-                    <span class="material-tag"><i class="fa-solid fa-circle-nodes"></i> Mosaic</span>
-                    <h3>Triveni Sea Mosaic</h3>
-                  </div>
-                  <div class="back-details">
-                    <p>Geometric mandala compiled with over 200 tiny seashells, cowries, and clam-shells, arranged symmetrically to represent the ocean convergence.</p>
-                    <div class="specs">
-                      <div class="spec-item"><strong>Carving Time:</strong> 18 Hrs</div>
-                      <div class="spec-item"><strong>Base:</strong> Polished Teakwood</div>
-                    </div>
-                  </div>
-                  <a href="https://wa.me/919500083229?text=Hi!%20I'm%20interested%20in%20the%20Seashell%20Mandala%20from%20Sri%20Kanya%20Handicrafts." target="_blank" class="enquire-btn">
-                    Enquire on WhatsApp <i class="fa-brands fa-whatsapp"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="flip-card-container" data-category="temple">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="6.jpeg" alt="Brass Bhagavathy Amman Lamp">
-                <div class="card-front-hud">
-                  <span class="category-badge">Temple Crafts</span>
-                  <h3>Temple Vilakku</h3>
-                </div>
-              </div>
-              <div class="flip-card-back">
-                <div class="back-content">
-                  <div class="back-header">
-                    <span class="material-tag"><i class="fa-solid fa-cubes-stacked"></i> Brass</span>
-                    <h3>Arulmigu Brass Lamp</h3>
-                  </div>
-                  <div class="back-details">
-                    <p>Heavy sand-cast brass vilakku (oil lamp) modeled after the temple lamps of Sannathi Street. Etched with floral and peacock detailing.</p>
-                    <div class="specs">
-                      <div class="spec-item"><strong>Casting Time:</strong> 35 Hrs</div>
-                      <div class="spec-item"><strong>Alloy:</strong> High-Grade Brass</div>
-                    </div>
-                  </div>
-                  <a href="https://wa.me/919500083229?text=Hi!%20I'm%20interested%20in%20the%20Temple%20Vilakku%20from%20Sri%20Kanya%20Handicrafts." target="_blank" class="enquire-btn">
-                    Enquire on WhatsApp <i class="fa-brands fa-whatsapp"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="flip-card-container" data-category="shell">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="7.jpeg" alt="Seashell Windchime">
-                <div class="card-front-hud">
-                  <span class="category-badge">Seashell Art</span>
-                  <h3>Seashell Chime</h3>
-                </div>
-              </div>
-              <div class="flip-card-back">
-                <div class="back-content">
-                  <div class="back-header">
-                    <span class="material-tag"><i class="fa-solid fa-wind"></i> Wind Chime</span>
-                    <h3>Whispering Shore Chime</h3>
-                  </div>
-                  <div class="back-details">
-                    <p>Hand-strung translucent capiz and fan shells that yield a soft, rhythmic whispering sound similar to gentle ocean waves in the wind.</p>
-                    <div class="specs">
-                      <div class="spec-item"><strong>Carving Time:</strong> 12 Hrs</div>
-                      <div class="spec-item"><strong>Strings:</strong> Invisible Nylon</div>
-                    </div>
-                  </div>
-                  <a href="https://wa.me/919500083229?text=Hi!%20I'm%20interested%20in%20the%20Seashell%20Chime%20from%20Sri%20Kanya%20Handicrafts." target="_blank" class="enquire-btn">
-                    Enquire on WhatsApp <i class="fa-brands fa-whatsapp"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 7 -->
-          <div class="flip-card-container" data-category="wood">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="8.jpeg" alt="Teak Wooden Chest">
-                <div class="card-front-hud">
-                  <span class="category-badge">Wood Carving</span>
-                  <h3>Teakwood Chest</h3>
-                </div>
-              </div>
-              <div class="flip-card-back">
-                <div class="back-content">
-                  <div class="back-header">
-                    <span class="material-tag"><i class="fa-solid fa-box"></i> Teak</span>
-                    <h3>Artisan Dowry Box</h3>
-                  </div>
-                  <div class="back-details">
-                    <p>Traditional storage chest carved from seasoned Malabar teak. Features heavy iron rivets and traditional security lock-latch.</p>
-                    <div class="specs">
-                      <div class="spec-item"><strong>Carving Time:</strong> 65 Hrs</div>
-                      <div class="spec-item"><strong>Accents:</strong> Hand-forged Iron</div>
-                    </div>
-                  </div>
-                  <a href="https://wa.me/919500083229?text=Hi!%20I'm%20interested%20in%20the%20Teakwood%20Chest%20from%20Sri%20Kanya%20Handicrafts." target="_blank" class="enquire-btn">
-                    Enquire on WhatsApp <i class="fa-brands fa-whatsapp"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 8 -->
-          <div class="flip-card-container" data-category="temple">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="9.jpeg" alt="Stone Temple Gopuram Model">
-                <div class="card-front-hud">
-                  <span class="category-badge">Temple Crafts</span>
-                  <h3>Granite Gopuram</h3>
-                </div>
-              </div>
-              <div class="flip-card-back">
-                <div class="back-content">
-                  <div class="back-header">
-                    <span class="material-tag"><i class="fa-solid fa-gem"></i> Stone</span>
-                    <h3>Sannathi Street Gopuram</h3>
-                  </div>
-                  <div class="back-details">
-                    <p>Soft soapstone replica of the Dravidian-style Temple Gopuram entrance. Carved by third-generation temple sculptors of Kanyakumari.</p>
-                    <div class="specs">
-                      <div class="spec-item"><strong>Carving Time:</strong> 80 Hrs</div>
-                      <div class="spec-item"><strong>Material:</strong> Grey Soapstone</div>
-                    </div>
-                  </div>
-                  <a href="https://wa.me/919500083229?text=Hi!%20I'm%20interested%20in%20the%20Granite%20Gopuram%20from%20Sri%20Kanya%20Handicrafts." target="_blank" class="enquire-btn">
-                    Enquire on WhatsApp <i class="fa-brands fa-whatsapp"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 9 -->
-          <div class="flip-card-container" data-category="wood">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="10.jpeg" alt="Rosewood Panel Carving">
-                <div class="card-front-hud">
-                  <span class="category-badge">Wood Carving</span>
-                  <h3>Rosewood Panel</h3>
-                </div>
-              </div>
-              <div class="flip-card-back">
-                <div class="back-content">
-                  <div class="back-header">
-                    <span class="material-tag"><i class="fa-solid fa-tree"></i> Rosewood</span>
-                    <h3>Dasavataram Relief</h3>
-                  </div>
-                  <div class="back-details">
-                    <p>Wall panel illustrating sacred iconography in three-dimensional relief. The rich grain of rosewood highlights shadows and curves.</p>
-                    <div class="specs">
-                      <div class="spec-item"><strong>Carving Time:</strong> 95 Hrs</div>
-                      <div class="spec-item"><strong>Dimension:</strong> 24" x 12"</div>
-                    </div>
-                  </div>
-                  <a href="https://wa.me/919500083229?text=Hi!%20I'm%20interested%20in%20the%20Rosewood%20Panel%20from%20Sri%20Kanya%20Handicrafts." target="_blank" class="enquire-btn">
-                    Enquire on WhatsApp <i class="fa-brands fa-whatsapp"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 10 -->
-          <div class="flip-card-container" data-category="shell">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="11.jpeg" alt="Giant Carved Conch Shell">
-                <div class="card-front-hud">
-                  <span class="category-badge">Seashell Art</span>
-                  <h3>Engraved Conch</h3>
-                </div>
-              </div>
-              <div class="flip-card-back">
-                <div class="back-content">
-                  <div class="back-header">
-                    <span class="material-tag"><i class="fa-solid fa-circle-radiation"></i> Conch</span>
-                    <h3>Dakshinavarti Conch</h3>
-                  </div>
-                  <div class="back-details">
-                    <p>A sacred right-handed conch shell polished and engraved with spiritual mandalas and floral patterns by local Kanyakumari craftsmen.</p>
-                    <div class="specs">
-                      <div class="spec-item"><strong>Engraving Time:</strong> 30 Hrs</div>
-                      <div class="spec-item"><strong>Origin:</strong> Gulf of Mannar</div>
-                    </div>
-                  </div>
-                  <a href="https://wa.me/919500083229?text=Hi!%20I'm%20interested%20in%20the%20Engraved%20Conch%20from%20Sri%20Kanya%20Handicrafts." target="_blank" class="enquire-btn">
-                    Enquire on WhatsApp <i class="fa-brands fa-whatsapp"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 11 -->
-          <div class="flip-card-container" data-category="wood">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="+12.jpeg" alt="Mahogany Jewel Box">
-                <div class="card-front-hud">
-                  <span class="category-badge">Wood Carving</span>
-                  <h3>Mahogany Urn</h3>
-                </div>
-              </div>
-              <div class="flip-card-back">
-                <div class="back-content">
-                  <div class="back-header">
-                    <span class="material-tag"><i class="fa-solid fa-tree"></i> Mahogany</span>
-                    <h3>Sacred Kumkum Urn</h3>
-                  </div>
-                  <div class="back-details">
-                    <p>Turned mahogany box with a high-polished lacquer finish. Styled with temple contours, designed to hold vermilion (kumkum) or sandalwood paste.</p>
-                    <div class="specs">
-                      <div class="spec-item"><strong>Carving Time:</strong> 15 Hrs</div>
-                      <div class="spec-item"><strong>Accent:</strong> Brass Inlay</div>
-                    </div>
-                  </div>
-                  <a href="https://wa.me/919500083229?text=Hi!%20I'm%20interested%20in%20the%20Mahogany%20Urn%20from%20Sri%20Kanya%20Handicrafts." target="_blank" class="enquire-btn">
-                    Enquire on WhatsApp <i class="fa-brands fa-whatsapp"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 12 -->
-          <div class="flip-card-container" data-category="shell">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="13.jpeg" alt="Seashell Wall Hanging Frame">
-                <div class="card-front-hud">
-                  <span class="category-badge">Seashell Art</span>
-                  <h3>Seashell Frame</h3>
-                </div>
-              </div>
-              <div class="flip-card-back">
-                <div class="back-content">
-                  <div class="back-header">
-                    <span class="material-tag"><i class="fa-solid fa-panorama"></i> Collage</span>
-                    <h3>Kanyakumari Shore Collage</h3>
-                  </div>
-                  <div class="back-details">
-                    <p>A natural collage representing coastal scenery. Combines scallops, cowries, and sea stars, bordered in a rustic distressed wooden frame.</p>
-                    <div class="specs">
-                      <div class="spec-item"><strong>Crafting Time:</strong> 22 Hrs</div>
-                      <div class="spec-item"><strong>Frame Size:</strong> 12" x 12"</div>
-                    </div>
-                  </div>
-                  <a href="https://wa.me/919500083229?text=Hi!%20I'm%20interested%20in%20the%20Seashell%20Frame%20from%20Sri%20Kanya%20Handicrafts." target="_blank" class="enquire-btn">
-                    Enquire on WhatsApp <i class="fa-brands fa-whatsapp"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 13 -->
-          <div class="flip-card-container" data-category="temple">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="14.jpeg" alt="Clay Terracotta Amman Face">
-                <div class="card-front-hud">
-                  <span class="category-badge">Temple Crafts</span>
-                  <h3>Terracotta Amman</h3>
-                </div>
-              </div>
-              <div class="flip-card-back">
-                <div class="back-content">
-                  <div class="back-header">
-                    <span class="material-tag"><i class="fa-solid fa-fire"></i> Terracotta</span>
-                    <h3>Devi Bhagavathy Mask</h3>
-                  </div>
-                  <div class="back-details">
-                    <p>Earthen terracotta mask hand-formed, baked in wood fire, and painted with natural pigments. Captures the iconic look of the temple deity.</p>
-                    <div class="specs">
-                      <div class="spec-item"><strong>Crafting Time:</strong> 20 Hrs</div>
-                      <div class="spec-item"><strong>Bake:</strong> Kiln Fired</div>
-                    </div>
-                  </div>
-                  <a href="https://wa.me/919500083229?text=Hi!%20I'm%20interested%20in%20the%20Terracotta%20Amman%20from%20Sri%20Kanya%20Handicrafts." target="_blank" class="enquire-btn">
-                    Enquire on WhatsApp <i class="fa-brands fa-whatsapp"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 14 -->
-          <div class="flip-card-container" data-category="wood">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="15.jpeg" alt="Rosewood Mirror Frame">
-                <div class="card-front-hud">
-                  <span class="category-badge">Wood Carving</span>
-                  <h3>Rosewood Mirror</h3>
-                </div>
-              </div>
-              <div class="flip-card-back">
-                <div class="back-content">
-                  <div class="back-header">
-                    <span class="material-tag"><i class="fa-solid fa-circle"></i> Mirror</span>
-                    <h3>Heritage Mirror Frame</h3>
-                  </div>
-                  <div class="back-details">
-                    <p>Oval vanity mirror border carved from dark rosewood, featuring intricate Dravidian temple scroll borders and leaf motifs.</p>
-                    <div class="specs">
-                      <div class="spec-item"><strong>Carving Time:</strong> 40 Hrs</div>
-                      <div class="spec-item"><strong>Glass:</strong> Beveled Edge</div>
-                    </div>
-                  </div>
-                  <a href="https://wa.me/919500083229?text=Hi!%20I'm%20interested%20in%20the%20Rosewood%20Mirror%20from%20Sri%20Kanya%20Handicrafts." target="_blank" class="enquire-btn">
-                    Enquire on WhatsApp <i class="fa-brands fa-whatsapp"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 15 -->
-          <div class="flip-card-container" data-category="temple">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="16.jpeg" alt="Teak Wooden Temple Chariot Model">
-                <div class="card-front-hud">
-                  <span class="category-badge">Temple Crafts</span>
-                  <h3>Teak Chariot</h3>
-                </div>
-              </div>
-              <div class="flip-card-back">
-                <div class="back-content">
-                  <div class="back-header">
-                    <span class="material-tag"><i class="fa-solid fa-truck-monster"></i> Miniature</span>
-                    <h3>Artisan Temple Rath</h3>
-                  </div>
-                  <div class="back-details">
-                    <p>Scale model of the temple chariot (Rath) with rotating wheels, pillared canopy, and micro engravings, carved entirely of country teakwood.</p>
-                    <div class="specs">
-                      <div class="spec-item"><strong>Carving Time:</strong> 110 Hrs</div>
-                      <div class="spec-item"><strong>Assembly:</strong> 48 Pieces</div>
-                    </div>
-                  </div>
-                  <a href="https://wa.me/919500083229?text=Hi!%20I'm%20interested%20in%20the%20Teak%20Chariot%20from%20Sri%20Kanya%20Handicrafts." target="_blank" class="enquire-btn">
-                    Enquire on WhatsApp <i class="fa-brands fa-whatsapp"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 16 -->
-          <div class="flip-card-container" data-category="shell">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="WhatsApp Image 2026-07-05 at 11.49.00 AM.jpeg" alt="Polished Abalone Shell Display">
-                <div class="card-front-hud">
-                  <span class="category-badge">Seashell Art</span>
-                  <h3>Polished Abalone</h3>
-                </div>
-              </div>
-              <div class="flip-card-back">
-                <div class="back-content">
-                  <div class="back-header">
-                    <span class="material-tag"><i class="fa-solid fa-rainbow"></i> Abalone</span>
-                    <h3>Iridescent Shore Dish</h3>
-                  </div>
-                  <div class="back-details">
-                    <p>Extra-large naturally occurring Abalone shell polished to reveal a dazzling interior spectrum of colors, used as a decor tray or incense holder.</p>
-                    <div class="specs">
-                      <div class="spec-item"><strong>Polishing:</strong> 8 Stages</div>
-                      <div class="spec-item"><strong>Iridescence:</strong> Natural Teal/Pink</div>
-                    </div>
-                  </div>
-                  <a href="https://wa.me/919500083229?text=Hi!%20I'm%20interested%20in%20the%20Polished%20Abalone%20from%20Sri%20Kanya%20Handicrafts." target="_blank" class="enquire-btn">
-                    Enquire on WhatsApp <i class="fa-brands fa-whatsapp"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </section>
-
+    </div>
   </main>
 
   <!-- Footer with Rock Structure Silhouette & Ocean Waves -->
@@ -1667,6 +700,54 @@
 
   <!-- Custom Javascript -->
   <script src="script.js"></script>
-<a href="index.html" class="nav-button">Go back to Home</a>
+
+  <!-- Exclusive Scroll Reveal & 3D Parallax engine script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Scroll Reveal Observer for text cards and columns
+      const revealCards = document.querySelectorAll('.story-card, .story-col-visual, .about-actions');
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-active');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px"
+      });
+
+      revealCards.forEach(card => {
+        card.classList.add('reveal-ready');
+        revealObserver.observe(card);
+      });
+
+      // 2. Viewport-relative 3D Parallax collage scroll calculations
+      function handleParallax() {
+        const scrolled = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        
+        document.querySelectorAll('.parallax-img-item').forEach(item => {
+          const rect = item.getBoundingClientRect();
+          const elementCenter = rect.top + rect.height / 2 + scrolled;
+          const viewportCenter = scrolled + windowHeight / 2;
+          
+          // Calculate distance from screen center
+          const delta = viewportCenter - elementCenter;
+          const speed = parseFloat(item.getAttribute('data-speed')) || 0.1;
+          const rotation = item.getAttribute('data-rotation') || '0';
+          
+          // Compute smooth scroll translation
+          const translateVal = delta * speed;
+          item.style.transform = `translateY(${translateVal}px) rotate(${rotation}deg)`;
+        });
+      }
+
+      window.addEventListener('scroll', handleParallax);
+      // Run once on load to position correctly
+      setTimeout(handleParallax, 100);
+    });
+  </script>
 </body>
 </html>
