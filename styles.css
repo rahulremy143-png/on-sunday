@@ -3164,8 +3164,8 @@ body.dark-mode .bg-beach-ball {
     flex-direction: column;
   }
 }
-/* This makes your link look like a nice button */
-a {
+/* Only style links that have the class 'nav-button' */
+.nav-button {
     display: inline-block;
     padding: 10px 20px;
     background-color: #007bff;
@@ -3175,7 +3175,6 @@ a {
     margin: 10px;
 }
 
-/* This adds a cool hover effect when the mouse goes over it */
-a:hover {
+.nav-button:hover {
     background-color: #0056b3;
 }
