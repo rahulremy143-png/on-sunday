@@ -1,0 +1,91 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  background:
+    radial-gradient(120% 120% at 50% 40%, #241a12 0%, #100b07 70%);
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.leaving {
+  opacity: 0;
+}
+
+.mark {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+}
+
+.monogram {
+  font-family: var(--sk-font-display);
+  font-weight: 700;
+  font-size: 2.4rem;
+  letter-spacing: 0.05em;
+  color: var(--sk-gold);
+  text-shadow: 0 0 24px rgba(232, 176, 75, 0.45);
+}
+
+.ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(232, 176, 75, 0.35);
+  border-top-color: var(--sk-gold);
+  animation: spin 1.4s linear infinite;
+}
+
+.name {
+  font-family: var(--sk-font-serif);
+  font-size: 1.05rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--sk-ink-dim);
+}
+
+.bar {
+  position: relative;
+  width: min(240px, 60vw);
+  height: 2px;
+  background: rgba(244, 237, 224, 0.14);
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.fill {
+  position: absolute;
+  inset: 0;
+  transform-origin: left center;
+  background: linear-gradient(90deg, var(--sk-teal), var(--sk-gold));
+  transition: transform 0.15s ease-out;
+}
+
+.percent {
+  font-family: var(--sk-font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--sk-ink-faint);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ring {
+    animation: none;
+  }
+  .overlay {
+    transition-duration: 0.3s;
+  }
+}

@@ -1,0 +1,228 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--sk-navy-900);
+}
+
+/* Full-bleed sunrise photograph */
+.media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% center;
+  transform: scale(1.06);
+  animation: kenburns 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.photoStatic {
+  animation: none;
+  transform: none;
+}
+
+/* Cinematic grade from the photo's own tones — dark at the bottom-left where the
+   headline lands, fully clear over the bright amber sky (upper-right). */
+.grade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(16, 11, 7, 0.94) 0%,
+      rgba(16, 11, 7, 0.55) 24%,
+      rgba(16, 11, 7, 0) 56%
+    ),
+    linear-gradient(
+      105deg,
+      rgba(16, 11, 7, 0.82) 0%,
+      rgba(16, 11, 7, 0.28) 40%,
+      rgba(16, 11, 7, 0) 64%
+    );
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--sk-max);
+  margin: 0 auto;
+  padding: 0 var(--sk-gutter) clamp(3.5rem, 12vh, 7rem);
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--sk-gold-soft);
+  text-shadow: 0 1px 12px rgba(16, 11, 7, 0.9);
+  margin-bottom: 1.3rem;
+}
+
+.title {
+  margin: 0;
+}
+
+.visualTitle {
+  display: block;
+}
+
+.line {
+  display: block;
+  white-space: nowrap;
+  font-family: var(--sk-font-display);
+  font-weight: 700;
+  font-size: clamp(2.4rem, 8.4vw, 5.5rem);
+  line-height: 1.05;
+  color: var(--sk-ink);
+  text-shadow: 0 2px 30px rgba(16, 11, 7, 0.7);
+}
+
+.lineTwo {
+  color: var(--sk-gold);
+  text-shadow: 0 2px 30px rgba(16, 11, 7, 0.7);
+}
+
+.char {
+  display: inline-block;
+  white-space: pre;
+  opacity: 0;
+  transform: translateY(0.5em) rotateX(-40deg);
+  animation: reveal 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+.charStatic {
+  display: inline-block;
+  white-space: pre;
+}
+
+.tagline {
+  margin-top: 1.6rem;
+  font-family: var(--sk-font-serif);
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  line-height: 1.65;
+  color: var(--sk-ink);
+  text-shadow: 0 1px 18px rgba(16, 11, 7, 0.85);
+  max-width: 36rem;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 1.1s forwards;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.2rem;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 1.35s forwards;
+}
+
+.primaryCta,
+.secondaryCta {
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.primaryCta {
+  background: var(--sk-gold);
+  color: var(--sk-navy-900);
+  font-weight: 600;
+}
+
+.primaryCta:hover {
+  transform: translateY(-2px);
+  background: var(--sk-gold-soft);
+}
+
+.secondaryCta {
+  border: 1px solid rgba(244, 236, 221, 0.4);
+  color: var(--sk-ink);
+  backdrop-filter: blur(2px);
+}
+
+.secondaryCta:hover {
+  transform: translateY(-2px);
+  border-color: var(--sk-gold-soft);
+  color: var(--sk-gold-soft);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1.06) translate(0, 0);
+  }
+  to {
+    transform: scale(1.14) translate(-1.5%, -1.5%);
+  }
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile: keep the statue + sun in frame, strengthen the bottom grade */
+@media (max-width: 640px) {
+  .photo {
+    object-position: 66% center;
+  }
+  .grade {
+    background: linear-gradient(
+      to top,
+      rgba(16, 11, 7, 0.95) 0%,
+      rgba(16, 11, 7, 0.6) 34%,
+      rgba(16, 11, 7, 0) 70%
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo {
+    animation: none;
+    transform: none;
+  }
+  .char,
+  .tagline,
+  .actions {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}

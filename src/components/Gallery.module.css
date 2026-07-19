@@ -1,0 +1,378 @@
+/* Clean deep-ink backdrop so the product photography pops. */
+.section {
+  position: relative;
+  padding: clamp(6rem, 14vh, 10rem) var(--sk-gutter);
+  background: var(--sk-deepink);
+}
+
+.container {
+  max-width: var(--sk-max);
+  margin: 0 auto;
+}
+
+.intro {
+  max-width: 44rem;
+  margin-bottom: clamp(2.5rem, 6vh, 4rem);
+}
+
+.kicker {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--sk-teal);
+  margin-bottom: 1.1rem;
+}
+
+.heading {
+  font-family: var(--sk-font-serif);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  color: var(--sk-ink);
+  max-width: 18ch;
+}
+
+.lead {
+  margin-top: 1.4rem;
+  font-size: clamp(1.02rem, 2vw, 1.25rem);
+  color: var(--sk-ink-dim);
+  max-width: 48ch;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: clamp(2rem, 5vh, 3rem);
+}
+
+.filterTab {
+  font-family: var(--sk-font-body);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(244, 237, 224, 0.2);
+  background: rgba(244, 237, 224, 0.03);
+  color: var(--sk-ink-dim);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.filterTab:hover {
+  color: var(--sk-ink);
+  border-color: rgba(232, 176, 75, 0.4);
+}
+
+.filterActive {
+  color: var(--sk-navy-900);
+  background: var(--sk-gold);
+  border-color: var(--sk-gold);
+  font-weight: 600;
+}
+
+/* Grid */
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: clamp(1rem, 2.5vw, 1.8rem);
+  perspective: 1200px;
+}
+
+.gridItem {
+  display: block;
+}
+
+/* Crystal card */
+.crystal {
+  --rx: 0deg;
+  --ry: 0deg;
+  --mx: 50%;
+  --my: 50%;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx)) rotateY(var(--ry));
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.crystalInner {
+  position: relative;
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #17110b;
+  border: 1px solid rgba(244, 236, 221, 0.08);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.crystal:hover .crystalInner,
+.crystal:focus-visible .crystalInner {
+  border-color: rgba(233, 164, 77, 0.42);
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.5);
+}
+
+.crystalMedia {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.crystalMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.crystal:hover .crystalMedia img {
+  transform: scale(1.04);
+}
+
+/* Restrained sheen — a faint sweep, photo stays the hero */
+.sheen {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mx) var(--my),
+    rgba(255, 255, 255, 0.14) 0%,
+    rgba(255, 255, 255, 0.03) 30%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  mix-blend-mode: soft-light;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.crystal:hover .sheen,
+.crystal:focus-visible .sheen {
+  opacity: 1;
+}
+
+.crystalHud {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  padding: 2.5rem 1rem 1rem;
+  text-align: left;
+  background: linear-gradient(180deg, rgba(16, 11, 7, 0) 0%, rgba(16, 11, 7, 0.88) 100%);
+}
+
+.categoryBadge {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sk-gold);
+  padding: 0.2rem 0.5rem;
+  border: 1px solid rgba(232, 176, 75, 0.4);
+  border-radius: 999px;
+  margin-bottom: 0.35rem;
+}
+
+.crystalName {
+  font-family: var(--sk-font-serif);
+  font-size: 1.1rem;
+  color: var(--sk-ink);
+  line-height: 1.2;
+}
+
+.crystalMaterial {
+  font-size: 0.75rem;
+  color: var(--sk-ink-faint);
+  letter-spacing: 0.04em;
+}
+
+/* Modal */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: rgba(10, 7, 4, 0.8);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.25s ease;
+}
+
+.modal {
+  position: relative;
+  width: min(920px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: linear-gradient(160deg, #221a12, #140f09);
+  border: 1px solid rgba(233, 164, 77, 0.24);
+  border-radius: 18px;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.6);
+  animation: popIn 0.28s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.modalClose {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2;
+  display: inline-grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(244, 236, 221, 0.2);
+  background: rgba(10, 7, 4, 0.6);
+  color: var(--sk-ink);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.modalClose:hover {
+  background: rgba(232, 176, 75, 0.15);
+  border-color: var(--sk-gold);
+}
+
+.modalGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.modalMedia {
+  margin: 0;
+}
+
+.modalMedia img {
+  width: 100%;
+  height: 100%;
+  max-height: 90vh;
+  object-fit: cover;
+}
+
+.modalBody {
+  padding: clamp(1.5rem, 4vw, 2.8rem);
+}
+
+.modalCategory {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sk-teal);
+  margin-bottom: 0.8rem;
+}
+
+.modalTitle {
+  font-family: var(--sk-font-serif);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: var(--sk-ink);
+}
+
+.modalSubtitle {
+  font-family: var(--sk-font-serif);
+  font-style: italic;
+  color: var(--sk-gold-soft);
+  margin-top: 0.3rem;
+}
+
+.modalDesc {
+  margin-top: 1.2rem;
+  line-height: 1.75;
+  color: var(--sk-ink-dim);
+}
+
+.specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1.6rem 0;
+}
+
+.spec {
+  margin: 0;
+}
+
+.spec dt {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sk-ink-faint);
+}
+
+.spec dd {
+  margin: 0.2rem 0 0;
+  font-family: var(--sk-font-serif);
+  font-size: 1.15rem;
+  color: var(--sk-ink);
+}
+
+.enquire {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  background: #25d366;
+  color: #04210f;
+  font-weight: 600;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.enquire:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crystal {
+    transform: none !important;
+    transition: none;
+  }
+  .crystal:hover .crystalMedia img {
+    transform: none;
+  }
+  .backdrop,
+  .modal {
+    animation: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .modalGrid {
+    grid-template-columns: 1fr;
+  }
+  .modalMedia img {
+    max-height: 40vh;
+  }
+}
