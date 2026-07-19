@@ -1,0 +1,183 @@
+/* Warm editorial chapter — solid graded charcoal backdrop, shop photography. */
+.section {
+  position: relative;
+  padding: clamp(6rem, 14vh, 10rem) var(--sk-gutter);
+  background: linear-gradient(
+    180deg,
+    #120d08 0%,
+    var(--sk-charcoal) 10%,
+    var(--sk-charcoal) 90%,
+    #14100c 100%
+  );
+}
+
+.container {
+  max-width: var(--sk-max);
+  margin: 0 auto;
+}
+
+.intro {
+  max-width: 44rem;
+  margin-bottom: clamp(3rem, 8vh, 6rem);
+}
+
+.kicker {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--sk-gold);
+  margin-bottom: 1.1rem;
+}
+
+.heading {
+  font-family: var(--sk-font-serif);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  color: var(--sk-ink);
+  max-width: 18ch;
+}
+
+.lead {
+  margin-top: 1.4rem;
+  font-size: clamp(1.02rem, 2vw, 1.25rem);
+  color: var(--sk-ink-dim);
+  max-width: 46ch;
+}
+
+.chapters {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4rem, 12vh, 8rem);
+}
+
+.chapter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.chapterReverse {
+  direction: rtl;
+}
+
+.chapterReverse > * {
+  direction: ltr;
+}
+
+.chapterMedia {
+  position: relative;
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+.chapterMedia img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.chapter:hover .chapterMedia img {
+  transform: scale(1.04);
+}
+
+.chapterIndex {
+  position: absolute;
+  top: 0.4rem;
+  left: 1rem;
+  font-family: var(--sk-font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: rgba(244, 236, 221, 0.92);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.7);
+  mix-blend-mode: overlay;
+}
+
+.chapterKicker {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--sk-teal);
+  margin-bottom: 1rem;
+}
+
+.chapterTitle {
+  font-family: var(--sk-font-serif);
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+  color: var(--sk-ink);
+  margin-bottom: 1.1rem;
+}
+
+.chapterBody {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--sk-ink-dim);
+  max-width: 42ch;
+}
+
+/* Artisan film */
+.filmWrap {
+  margin: 0;
+}
+
+.filmFrame {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  background: #000;
+}
+
+.video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.filmCaption {
+  margin-top: 0.9rem;
+  font-size: 0.82rem;
+  color: var(--sk-ink-faint);
+  font-style: italic;
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(2.5rem);
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.noMotion {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .chapter:hover .chapterMedia img {
+    transform: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .chapter,
+  .chapterReverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+}

@@ -1,0 +1,131 @@
+/*
+ * Global styles + theme tokens for Sri Kanya Handicrafts.
+ *
+ * DESIGN SYSTEM (photography-led): the palette is re-derived from the two
+ * Kanyakumari photographs — the golden-sunrise hero and the daylight cobalt-sea
+ * portrait. Real photos are the visual backbone; sections between them use flat,
+ * confident graded backdrops in these tones.
+ *
+ * CSS CONVENTIONS:
+ *  - Design tokens live here as CSS custom properties on :root (--sk-*).
+ *  - Component/section styling uses co-located CSS Modules (*.module.css).
+ *  - No fixed WebGL layer any more — each section owns its background.
+ */
+
+:root {
+  /* Sunrise — amber / gold (from the hero photo) */
+  --sk-gold: #e9a44d;
+  --sk-gold-soft: #f4c77e;
+  --sk-amber: #f6d89e;
+  --sk-sand: #d9b98a;
+
+  /* Deep charcoal-brown of the rocks — dark backdrops + dark-on-gold text */
+  --sk-navy-900: #100b07; /* deepest (text on gold, skip-link) */
+  --sk-navy-800: #17120c; /* body / warm charcoal */
+  --sk-navy-700: #211a12;
+  --sk-charcoal: #1b1610; /* story editorial backdrop */
+  --sk-deepink: #100e0c; /* gallery — clean deep ink so products pop */
+
+  /* Daylight sea — teal / cobalt (from the portrait photo) */
+  --sk-teal: #4aa7c6;
+  --sk-sea-glass: #c3e0e6;
+  --sk-sea-cobalt: #0e2c49;
+  --sk-sea-deep: #0a2138;
+
+  /* Text */
+  --sk-ink: #f4ecdd; /* warm paper */
+  --sk-ink-dim: #d0c3ae;
+  --sk-ink-faint: rgba(244, 236, 221, 0.58);
+
+  /* Type */
+  --sk-font-display: 'Cinzel Decorative', 'Playfair Display', serif;
+  --sk-font-serif: 'Playfair Display', Georgia, serif;
+  --sk-font-body: 'Outfit', system-ui, -apple-system, sans-serif;
+
+  /* Layout */
+  --sk-max: 1160px;
+  --sk-gutter: clamp(1.25rem, 5vw, 4rem);
+  --sk-header-h: 4.5rem;
+
+  --sk-focus: 2px solid var(--sk-gold);
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--sk-navy-800);
+  color: var(--sk-ink);
+  font-family: var(--sk-font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+p {
+  margin: 0;
+}
+
+/* Accessibility: visible focus + skip link */
+:focus-visible {
+  outline: var(--sk-focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  background: var(--sk-gold);
+  color: var(--sk-navy-900);
+  font-family: var(--sk-font-body);
+  font-weight: 600;
+  border-radius: 6px;
+  transform: translateY(-150%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}

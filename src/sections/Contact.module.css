@@ -1,0 +1,151 @@
+/* Finale — the sunrise photograph, cropped darker and bottom-anchored. */
+.section {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(6rem, 12vh, 9rem) var(--sk-gutter) 5.5rem;
+  text-align: center;
+  overflow: hidden;
+  background: var(--sk-navy-900);
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.grade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(16, 11, 7, 0.82) 0%,
+      rgba(16, 11, 7, 0.58) 45%,
+      rgba(16, 11, 7, 0.92) 100%
+    ),
+    radial-gradient(ellipse 70% 60% at 50% 45%, rgba(16, 11, 7, 0.1) 0%, rgba(16, 11, 7, 0.7) 100%);
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 46rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.kicker {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--sk-gold-soft);
+  text-shadow: 0 1px 12px rgba(16, 11, 7, 0.9);
+  margin-bottom: 1.1rem;
+}
+
+.heading {
+  font-family: var(--sk-font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 5.5vw, 3.6rem);
+  color: var(--sk-gold);
+  text-shadow: 0 2px 30px rgba(16, 11, 7, 0.8);
+}
+
+.lead {
+  margin-top: 1.5rem;
+  font-family: var(--sk-font-serif);
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  line-height: 1.7;
+  color: var(--sk-ink);
+  text-shadow: 0 1px 18px rgba(16, 11, 7, 0.85);
+  max-width: 42ch;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.whatsapp,
+.instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.7rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.2s ease, filter 0.2s ease, border-color 0.2s ease;
+}
+
+.whatsapp {
+  background: #25d366;
+  color: #04210f;
+}
+
+.whatsapp:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.instagram {
+  border: 1px solid rgba(244, 236, 221, 0.4);
+  color: var(--sk-ink);
+  backdrop-filter: blur(2px);
+}
+
+.instagram:hover {
+  transform: translateY(-2px);
+  border-color: var(--sk-gold-soft);
+  color: var(--sk-gold-soft);
+}
+
+.address {
+  margin-top: 2.3rem;
+  font-style: normal;
+  font-size: 0.95rem;
+  color: var(--sk-ink-dim);
+  text-shadow: 0 1px 12px rgba(16, 11, 7, 0.9);
+}
+
+.address a {
+  color: var(--sk-gold-soft);
+  border-bottom: 1px solid rgba(244, 199, 126, 0.4);
+}
+
+.footer {
+  position: absolute;
+  z-index: 1;
+  bottom: 1.6rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 0 var(--sk-gutter);
+}
+
+.credit,
+.copyright {
+  font-size: 0.75rem;
+  color: var(--sk-ink-faint);
+  text-shadow: 0 1px 10px rgba(16, 11, 7, 0.9);
+}
+
+.credit {
+  margin-bottom: 0.35rem;
+}
