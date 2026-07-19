@@ -3164,7 +3164,7 @@ body.dark-mode .bg-beach-ball {
     flex-direction: column;
   }
 }
-/* Only style links that have the class 'nav-button' */
+/* 1. This keeps your bottom 'Go to About/Home' links blue */
 .nav-button {
     display: inline-block;
     padding: 10px 20px;
@@ -3177,4 +3177,15 @@ body.dark-mode .bg-beach-ball {
 
 .nav-button:hover {
     background-color: #0056b3;
+}
+
+/* 2. This SPECIFICALLY targets and overrides links in your header */
+/* It forces them to look like normal text, even if they have the 'nav-button' class */
+header .desktop-nav a.nav-button {
+    background-color: transparent !important;
+    color: inherit !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    text-decoration: none !important;
 }
