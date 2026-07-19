@@ -3164,3 +3164,18 @@ body.dark-mode .bg-beach-ball {
     flex-direction: column;
   }
 }
+/* This makes your link look like a nice button */
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+/* This adds a cool hover effect when the mouse goes over it */
+a:hover {
+    background-color: #0056b3;
+}
