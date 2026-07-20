@@ -35,6 +35,7 @@
           <li><a href="#location-map" class="nav-link-item">Location</a></li>
           <li><a href="#gallery" class="nav-link-item">Artisan Gallery</a></li>
           <li><a href="#footer-section" class="nav-link-item">Find Us</a></li>
+          <li><a href="about.html" class="nav-link-item about-us-link">About Us</a></li>
         </ul>
       </nav>
       
@@ -64,16 +65,16 @@
 
   <!-- Mobile Navigation Overlay -->
   <div class="mobile-nav-overlay" id="navOverlay">
-   <nav class="desktop-nav">
-  <ul>
-    <li><a href="#hero" class="nav-link-item nav-button">Home</a></li>
-    <li><a href="#heritage" class="nav-link-item nav-button">Our Heritage</a></li>
-    <li><a href="#location-map" class="nav-link-item nav-button">Location</a></li>
-    <li><a href="#gallery" class="nav-link-item nav-button">Artisan Gallery</a></li>
-    <li><a href="#footer-section" class="nav-link-item nav-button">Find Us</a></li>
-  </ul>
-</nav>   
-   <div class="mobile-socials">
+    <nav class="mobile-nav-menu">
+      <ul>
+        <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+        <li><a href="#heritage" class="mobile-nav-link">Our Heritage</a></li>
+        <li><a href="#location-map" class="mobile-nav-link">Location</a></li>
+        <li><a href="#gallery" class="mobile-nav-link">Artisan Gallery</a></li>
+        <li><a href="#footer-section" class="mobile-nav-link">Find Us</a></li>
+        <li><a href="about.html" class="mobile-nav-link about-us-link">About Us</a></li>
+      </ul>
+      <div class="mobile-socials">
         <a href="https://wa.me/919500083229" target="_blank" class="mobile-social-icon wa" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         <a href="https://instagram.com/srikanya_handicrafts" target="_blank" class="mobile-social-icon ig" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
       </div>
@@ -952,16 +953,20 @@
           <div class="header-line"></div>
         </div>
 
-        <!-- Category Filter Tabs -->
-        <div class="filter-container">
-          <button class="filter-tab active" data-category="all" id="tab-all">All Crafts</button>
-          <button class="filter-tab" data-category="wood" id="tab-wood">Wood Carvings</button>
-          <button class="filter-tab" data-category="shell" id="tab-shell">Seashell Art</button>
-          <button class="filter-tab" data-category="temple" id="tab-temple">Temple Souvenirs</button>
-        </div>
-        
-        <!-- Flip Cards Grid -->
-        <div class="gallery-grid" id="galleryGrid">
+        <!-- Showcase Layout Container -->
+        <div class="showcase-flex-layout">
+          
+          <div class="gallery-main-content">
+            <!-- Category Filter Tabs -->
+            <div class="filter-container">
+              <button class="filter-tab active" data-category="all" id="tab-all">All Crafts</button>
+              <button class="filter-tab" data-category="wood" id="tab-wood">Wood Carvings</button>
+              <button class="filter-tab" data-category="shell" id="tab-shell">Seashell Art</button>
+              <button class="filter-tab" data-category="temple" id="tab-temple">Temple Souvenirs</button>
+            </div>
+            
+            <!-- Flip Cards Grid -->
+            <div class="gallery-grid" id="galleryGrid">
           
           <!-- Card 1 -->
           <div class="flip-card-container" data-category="wood">
@@ -1458,9 +1463,54 @@
               </div>
             </div>
           </div>
-          
+        </div> <!-- end gallery-grid -->
+      </div> <!-- end gallery-main-content -->
+
+      <!-- Store Sidebar on the Right -->
+      <div class="store-sidebar">
+        <div class="store-3d-card-wrapper">
+          <a href="https://protrack.xyz" target="_blank" class="store-3d-card" id="protrackStoreCard">
+            <!-- Double multi-color outlines -->
+            <div class="card-outline outline-multi-1"></div>
+            <div class="card-outline outline-multi-2"></div>
+            
+            <div class="card-inner-content">
+              <!-- Textured background overlay -->
+              <div class="card-texture"></div>
+              
+              <!-- Floating Vector Birds & Leaves -->
+              <div class="interactive-element bird-element bird-1">
+                <svg class="bird-svg" viewBox="0 0 100 100">
+                  <path class="left-wing" d="M50 50 Q30 20 10 30 Q30 40 50 50 Z" fill="currentColor"/>
+                  <path class="right-wing" d="M50 50 Q70 20 90 30 Q70 40 50 50 Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="interactive-element bird-element bird-2">
+                <svg class="bird-svg" viewBox="0 0 100 100">
+                  <path class="left-wing" d="M50 50 Q30 25 15 35 Q30 43 50 50 Z" fill="currentColor"/>
+                  <path class="right-wing" d="M50 50 Q70 25 85 35 Q70 43 50 50 Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="interactive-element leaf-element leaf-1">🍂</div>
+              <div class="interactive-element leaf-element leaf-2">🍃</div>
+              <div class="interactive-element leaf-element leaf-3">🍁</div>
+              
+              <!-- Card Contents -->
+              <div class="card-content-text">
+                <span class="store-badge">STORE ON PROTRACK</span>
+                <img src="xyz-letter-logo-design-with-polygon-shape-xyz-polygon-and-cube-shape-logo-design-xyz-hexagon-logo-template-white-and-black-colors-xyz-monogram-business-and-real-estate-logo-vector.webp" alt="ProTrack Logo" class="store-logo-img">
+                <p class="store-desc">Check out my store, powered by ProTrack.XYZ! Explore premium handcrafted wood carvings, sandalwood figures, and seashell art online.</p>
+                <span class="store-visit-btn">
+                  Visit Store <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </span>
+              </div>
+            </div>
+          </a>
         </div>
-      </div>
+      </div> <!-- end store-sidebar -->
+
+    </div> <!-- end showcase-flex-layout -->
+  </div> <!-- end section-container -->
     </section>
 
   </main>
@@ -1668,6 +1718,5 @@
 
   <!-- Custom Javascript -->
   <script src="script.js"></script>
-<a href="about.html" class="nav-button">Go to About Page</a>
 </body>
 </html>

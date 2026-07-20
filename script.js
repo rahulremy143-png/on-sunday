@@ -340,4 +340,51 @@ document.addEventListener('DOMContentLoaded', () => {
   `;
   document.head.appendChild(revealStyle);
 
+  // 13. PROTRACK STORE CARD 3D TILT & VIEWPORT REVEAL ENGINE
+  const protrackCard = document.getElementById('protrackStoreCard');
+  if (protrackCard) {
+    const parent = protrackCard.parentElement;
+    
+    // Ensure wrapper shows pointer cursor
+    parent.style.cursor = 'pointer';
+    
+    // Bind click to the wrapper to bypass 3D click hit-testing bugs
+    parent.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.open(protrackCard.href, '_blank');
+    });
+
+    parent.addEventListener('mousemove', (e) => {
+      const rect = parent.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      // Calculate rotation angles
+      const rotateX = -y / 15;
+      const rotateY = x / 15;
+      
+      protrackCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+    });
+    
+    parent.addEventListener('mouseleave', () => {
+      protrackCard.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
+    });
+  }
+
+  const protrackWrapper = document.querySelector('.store-3d-card-wrapper');
+  if (protrackWrapper) {
+    protrackWrapper.classList.add('reveal-hidden');
+    const storeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          protrackWrapper.classList.add('reveal-show');
+          storeObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+    storeObserver.observe(protrackWrapper);
+  }
+
 });
